@@ -16,6 +16,9 @@ class Genre(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=200, help_text="Enter the book's language")
 
+    def __str__(self):
+        return self.name
+
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
