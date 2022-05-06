@@ -33,6 +33,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "^4.0.4"
+environs = {extras = ["django"], version = "^9.5.0"}
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
