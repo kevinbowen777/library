@@ -1,0 +1,17 @@
+# Remember to rename to .env
+# and uncomment the appropriate CONFIG statements
+# depending upon the deployment environment
+DEBUG=True
+# python -c "import uuid; print(uuid.uuid4().hex)"
+# to generate secret key
+SECRET_KEY=<secret_key>
+# EMAIL_HOST_PASSWORD='<mailhost_password>
+# SECURE_SSL_REDIRECT=False
+# SECURE_HSTS_SECONDS=0
+# SECURE_HSTS_INCLUDE_SUBDOMAINS=False
+# SECURE_HSTS_PRELOAD=False
+# SESSION_COOKIE_SECURE=False
+# CSRF_COOKIE_SECURE=False
+# MAIL_USERNAME=<email_username>
+# MAIL_PASSWORD=<email_password>
+# DATABASE_URL=
