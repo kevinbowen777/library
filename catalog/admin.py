@@ -28,3 +28,20 @@ class AuthorAdmin(admin.ModelAdmin):
     list_display = ("last_name", "first_name", "middle_name", "date_of_birth", "date_of_death")
     fields = ["first_name", "middle_name", "last_name", ("date_of_birth", "date_of_death")]
     inlines = [BooksInline]
+
+
+class BooksInstanceInline(admin.TabularInline):
+    """Defines format of inline book instance insertion"""
+
+    model = BookInstance
+
+
+class BookAdmin(admin.ModelAdmin):
+    """Administration object for Book models.
+    Defines:
+     - fields to be displayed in the list view (list_display)
+     - adds inline addition of book instances in book view (inlines)
+    """
+
+    list_display = ("title", "author", "display_genre")
+    inlines = [BooksInstanceInline]
