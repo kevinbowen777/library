@@ -19,6 +19,9 @@ class Genre(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=200, help_text="Enter the book's language")
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return self.name
 
