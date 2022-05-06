@@ -9,11 +9,9 @@ exclude = '''
   | .venv
   | alembic
   | staticfiles
-  | catalog/migrations/0001_initial.py
-  | accounts/migrations/0001_initial.py
   | build
   | dist
-  | ^.*\b(migrations)\b.*$
+  | migrations
 )/
 '''
 
