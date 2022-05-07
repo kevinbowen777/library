@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from .models import Author, Book, BookInstance, Genre  # noqa:F401
 
@@ -16,3 +17,29 @@ def index(request):
     }
 
     return render(request, "index.html", context=context)
+
+
+class BookListView(generic.ListView):
+    """Generic class-based view for a list of books."""
+
+    model = Book
+    paginate_by = 5
+
+
+class BookDetailView(generic.DetailView):
+    """Generic class-based detail view for a book."""
+
+    model = Book
+
+
+class AuthorListView(generic.ListView):
+    """Generic class-based list view for a list of authors."""
+
+    model = Author
+    paginate_by = 5
+
+
+class AuthorDetailView(generic.DetailView):
+    """Generic class-based detail view for an author."""
+
+    model = Author
