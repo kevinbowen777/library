@@ -10,3 +10,7 @@ class HomepageTests(TestCase):
     def test_index_url_name(self):
         response = self.client.get(reverse("index"))
         self.assertEqual(response.status_code, 200)
+
+    def test_index_template(self):
+        response = self.client.get(reverse("index"))
+        self.assertTemplateUsed(response, "index.html")
