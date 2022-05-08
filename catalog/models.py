@@ -1,7 +1,9 @@
 import uuid
 from datetime import date  # noqa:F401
 
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+# from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
@@ -29,8 +31,8 @@ class Language(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, null=True)
-    pages = models.IntegerField(null=True, blank=True, help_text="Number of Pages")
-    publisher = models.CharField(max_length=40, null=True, blank=True)
+    pages = models.IntegerField(blank=True, help_text="Number of Pages")
+    publisher = models.CharField(max_length=40, blank=True)
     pubdate = models.DateField(null=True, blank=True, help_text="Date Published")
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book.")
     isbn = models.CharField(
@@ -67,7 +69,7 @@ class BookInstance(models.Model):
     book = models.ForeignKey("Book", on_delete=models.RESTRICT, null=True)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
-    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    borrower = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True)
 
     LOAN_STATUS = (
         ("m", "Maintenance"),

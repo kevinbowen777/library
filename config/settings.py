@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Local applications
     "catalog",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -111,3 +112,5 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "accounts.CustomUser"
