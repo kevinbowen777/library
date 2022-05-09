@@ -1,4 +1,4 @@
-{% extends "base.html %}
+{% extends "base.html" %}
 
 {% block content %}
   <h2>Borrowed Books</h2>
@@ -6,8 +6,7 @@
     <ul>
       {% for bookinst in bookinstance_list %}
       <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
-        <a href="{% usrl 'book-detail' bookinst.book.pk %}">{{
-          bookinst.book.title</a> ({{ bookinst.due_back }})
+        <a href="{% url 'book-detail' bookinst.book.pk %}">{{ bookinst.book.title }}</a> Due date: ({{ bookinst.due_back }})
       </li>
       {% endfor %}
     </ul>
