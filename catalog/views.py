@@ -47,3 +47,12 @@ class AuthorDetailView(LoginRequiredMixin, DetailView):
     """Generic class-based detail view for an author."""
 
     model = Author
+
+
+class LoanedBooksByUserListView(LoginRequiredMixin, ListView):
+    model = BookInstance
+    template_name = "catalog/bookinstance_list_borrowed_user.html"
+    paginate_by = 2
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact="o").order_by("due_back")
