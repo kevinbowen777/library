@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
@@ -22,27 +23,27 @@ def index(request):
     return render(request, "index.html", context=context)
 
 
-class BookListView(ListView):
+class BookListView(LoginRequiredMixin, ListView):
     """Generic class-based view for a list of books."""
 
     model = Book
     paginate_by = 10
 
 
-class BookDetailView(DetailView):
+class BookDetailView(LoginRequiredMixin, DetailView):
     """Generic class-based detail view for a book."""
 
     model = Book
 
 
-class AuthorListView(ListView):
+class AuthorListView(LoginRequiredMixin, ListView):
     """Generic class-based list view for a list of authors."""
 
     model = Author
     paginate_by = 10
 
 
-class AuthorDetailView(DetailView):
+class AuthorDetailView(LoginRequiredMixin, DetailView):
     """Generic class-based detail view for an author."""
 
     model = Author
