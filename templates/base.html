@@ -26,6 +26,16 @@
         <ul class="sidebar-nav">
           {% if user.is_authenticated %}
           <li><button class="btn btn-outline-dark mb-2">User: {{ user.get_username }}</button></li>
+
+          {% if user.is_staff %}
+          <ul class="sidebar-nav">
+            <li><strong>Staff</strong></li>
+            {% if perms.catalog.can_mark_returned %}
+            <li><a class="btn btn-outline-dark" href="{% url 'all-borrowed' %}">All borrowed</a></li>
+            {% endif %}
+          </ul>
+          {% endif %}
+          <hr />
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'authors' %}">All authors</a></li> </ul>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
