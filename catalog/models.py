@@ -95,7 +95,7 @@ class BookInstance(models.Model):
         permissions = (("can_mark_returned", "Set book as returned"),)
 
     def __str__(self):
-        return f"{self.id} ({self.book.title})"
+        return "{0} ({1})".format(self.id, self.book.title)
 
 
 class Author(models.Model):
