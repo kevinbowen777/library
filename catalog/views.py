@@ -5,10 +5,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from django.views.generic import CreateView, DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 from .forms import RenewBookModelForm
-from .models import Author, Book, BookInstance, Genre  # noqa:F401
+from .models import Author, Book, BookInstance
 
 
 def index(request):
@@ -103,4 +103,10 @@ class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
     initial = {"date_of_death": "11/22/1969"}
+    permission_required = "catalog.can_mark_returned"
+
+
+class AuthorUpdate(PermissionRequiredMixin, UpdateView):
+    model = Author
+    fields = "__all__"  # Not recommended (potential security issue if more fields added)
     permission_required = "catalog.can_mark_returned"
