@@ -1,3 +1,4 @@
+{% load bootstrap4 %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,13 +6,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Local Library{% endblock title %}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
-    <link rel="stylesheet"
-               href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-               crossorigin="anonymous">
   <!-- Add additional CSS in static file -->
-  {% load static %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
@@ -19,13 +16,6 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'index' %}">Library</a>
-    {% if user.is_authenticated %}
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="btn btn-outline-light" href="{% url 'index' %}">Tasks</a>
-        </li>
-      </ul>
-    {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -77,7 +67,6 @@
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'authors' %}">All authors</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
-          <li><a class="btn btn-info" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
           {% endif %}
       </ul>
 
