@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from django.views.generic import DetailView, ListView
+from django.views.generic import CreateView, DetailView, ListView
 
 from .forms import RenewBookModelForm
 from .models import Author, Book, BookInstance, Genre  # noqa:F401
@@ -97,3 +97,10 @@ def renew_book_librarian(request, pk):
     }
 
     return render(request, "catalog/book_renew_librarian.html", context)
+
+
+class AuthorCreate(PermissionRequiredMixin, CreateView):
+    model = Author
+    fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
+    initial = {"date_of_death": "11/22/1969"}
+    permission_required = "catalog.can_mark_returned"
