@@ -27,7 +27,9 @@
           {% if user.is_staff %}
             <li><strong>Staff</strong></li>
             {% if perms.catalog.can_mark_returned %}
-            <li><a class="btn btn-outline-dark mb-4" href="{% url 'all-borrowed' %}">All borrowed</a></li>
+            <li><a class="btn btn-outline-dark mb-2" href="{% url 'all-borrowed' %}">All borrowed</a></li>
+            <li><a class="btn btn-outline-dark mb-2" href="{% url 'author-create' %}">Add new author</a>
+            <li><a class="btn btn-outline-dark mb-4" href="{% url 'book-create' %}">Add new book</a>
             {% endif %}
           {% endif %}
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
