@@ -14,3 +14,10 @@ urlpatterns = [
     path("catalog/", include("catalog.urls")),
     path("", RedirectView.as_view(url="catalog/", permanent=True)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar  # noqa: F401
+
+    urlpatterns = [
+        path("__debug__/", include(debug_toolbar.urls)),
+    ] + urlpatterns
