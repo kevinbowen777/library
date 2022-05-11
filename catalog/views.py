@@ -102,11 +102,12 @@ def renew_book_librarian(request, pk):
 class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
-    initial = {"date_of_death": "11/22/1969"}
     permission_required = "catalog.can_mark_returned"
+    template_name = "catalog/author_create.html"
 
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     model = Author
-    fields = "__all__"  # Not recommended (potential security issue if more fields added)
+    fields = ["first_name", "last_name", "middle_name", "date_of_birth", "date_of_death"]
     permission_required = "catalog.can_mark_returned"
+    template_name = "catalog/author_update.html"
