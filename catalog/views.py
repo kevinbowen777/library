@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
-from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 
 from .forms import RenewBookModelForm
 from .models import Author, Book, BookInstance
@@ -111,3 +111,8 @@ class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     fields = ["first_name", "last_name", "middle_name", "date_of_birth", "date_of_death"]
     permission_required = "catalog.can_mark_returned"
     template_name = "catalog/author_update.html"
+
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy("authors")
