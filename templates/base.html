@@ -35,9 +35,9 @@
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'authors' %}">All authors</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
-          <li><a class="btn btn-outline-dark" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+          <li><a class="btn btn-info" href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
           {% else %}
-          <li><a class="btn btn-outline-dark" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+          <li><a class="btn btn-success" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
           {% endif %}
       </ul>
 
