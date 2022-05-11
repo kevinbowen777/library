@@ -7,6 +7,7 @@
     <table>
     {{ form.as_table }}
     </table>
-    <button class="btn btn-outline-dark" type="submit">Submit</button>
+    <button class="btn btn-success" type="submit">Submit</button>
+    <a class="btn btn-info" href="{% url 'author-detail' author.id %}">Cancel</a>
   </form>
-{% endblock %}
+{% endblock content %}
