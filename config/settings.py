@@ -24,6 +24,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # third-party apps
+    "debug_toolbar",
     # Local applications
     "catalog",
     "accounts",
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -119,3 +122,12 @@ LOGIN_REDIRECT_URL = "index"
 # LOGOUT_REDIRECT_URL = "index"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# django-debug-toolbar
+# import socket
+
+# Uncomment the following two lines for using toolbar in Docker:
+# hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+# INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+# The following line is for toolbar use locally:
+INTERNAL_IPS = ["127.0.0.1"]
