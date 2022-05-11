@@ -29,7 +29,7 @@ class Language(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, null=True)
-    pages = models.IntegerField(blank=True, help_text="Number of Pages")
+    pages = models.IntegerField(null=True, blank=True, help_text="Number of Pages")
     publisher = models.CharField(max_length=40, blank=True)
     pubdate = models.DateField(null=True, blank=True, help_text="Date Published")
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book.")
