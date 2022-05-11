@@ -12,4 +12,6 @@
       {% endfor %}
       </dl>
   </div>
+  <a class="btn btn-danger" href="{% url 'author-delete' author.id %}">Delete Author</a>
+  <a class="btn btn-info" href="{% url 'author-update' author.id %}">Update Author</a>
 {% endblock content %}
