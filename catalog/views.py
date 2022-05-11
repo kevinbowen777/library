@@ -113,6 +113,6 @@ class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     template_name = "catalog/author_update.html"
 
 
-class AuthorDelete(DeleteView):
+class AuthorDelete(PermissionRequiredMixin, DeleteView):
     model = Author
     success_url = reverse_lazy("authors")
