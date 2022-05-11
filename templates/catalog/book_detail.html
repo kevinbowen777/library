@@ -9,6 +9,7 @@
     <p><strong>Publisher:</strong> {{ book.publisher }}</p>
     <p><strong>Language:</strong> {{ book.language }}</p>
     <p><strong>Genre:</strong> {{ book.genre.all|join:", " }}</p>
+  <a class="btn btn-danger" href="{% url 'book-delete' book.id %}">Delete Book</a>
   <a class="btn btn-info" href="{% url 'book-update' book.id %}">Update Book</a>
   <div style="margin-left:20px;margin-top:20px">
     <h4>Copies Available:</h4>
