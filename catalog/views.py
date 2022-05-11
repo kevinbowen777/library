@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views.generic import DetailView, ListView
 
-from .forms import RenewBookForm
+from .forms import RenewBookModelForm
 from .models import Author, Book, BookInstance, Genre  # noqa:F401
 
 
@@ -75,21 +75,21 @@ class LoanedBooksAllListView(PermissionRequiredMixin, ListView):
 
 
 @login_required
-@permission_required("catalog.can_mark_returned", raise_exception=True)
+@permission_required("can_mark_returned", raise_exception=True)
 def renew_book_librarian(request, pk):
     """View function for renewing a specific BookInstance by librarian."""
     book_instance = get_object_or_404(BookInstance, pk=pk)
 
     if request.method == "Post":
-        form = RenewBookForm(request.POST)
+        form = RenewBookModelForm(request.POST)
         if form.is_valid():
-            book_instance.due_back = form.cleaned_data["renewal_date"]
+            book_instance.due_back = form.cleaned_data["due_back"]
             book_instance.save()
 
             return HttpResponseRedirect(reverse("all-borrowed"))
     else:
         proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
-        form = RenewBookForm(initial={"renewal_date": proposed_renewal_date})
+        form = RenewBookModelForm(initial={"due_back": proposed_renewal_date})
 
     context = {
         "form": form,
