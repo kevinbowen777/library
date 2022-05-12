@@ -28,8 +28,8 @@ INSTALLED_APPS = [
     "bootstrap4",
     "debug_toolbar",
     # Local applications
-    "catalog",
     "accounts",
+    "catalog",
     "pages",
 ]
 
@@ -121,7 +121,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "index"
-# LOGOUT_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "home"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -132,4 +132,4 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 # INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 # The following line is for toolbar use locally:
-INTERNAL_IPS = ["127.0.0.1"]
+# INTERNAL_IPS = ["127.0.0.1"]
