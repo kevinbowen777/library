@@ -1,8 +1,6 @@
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView
 
 urlpatterns = [
     # Django admin
@@ -10,10 +8,10 @@ urlpatterns = [
     # User management
     path("accounts/", include("django.contrib.auth.urls")),
     # Application specific
+    path("", include("pages.urls")),
     path("accounts/", include("accounts.urls")),
     path("catalog/", include("catalog.urls")),
-    path("", RedirectView.as_view(url="catalog/", permanent=True)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 if settings.DEBUG:
     import debug_toolbar  # noqa: F401
