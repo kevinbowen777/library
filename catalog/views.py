@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DeleteView, DetailView, ListView, TemplateView, UpdateView
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 
 from .forms import RenewBookModelForm
 from .models import Author, Book, BookInstance
@@ -27,14 +27,6 @@ def index(request):
     }
 
     return render(request, "index.html", context=context)
-
-
-class AboutPageView(TemplateView):
-    template_name = "about.html"
-
-
-class HomePageView(TemplateView):
-    template_name = "index.html"
 
 
 class BookListView(LoginRequiredMixin, ListView):
