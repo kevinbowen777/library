@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     # Local applications
     "catalog",
     "accounts",
+    "pages",
 ]
 
 MIDDLEWARE = [
