@@ -1,10 +1,10 @@
 from django.test import TestCase
 from django.urls import resolve, reverse
 
-from .views import AboutPageView, HomePageView
+from .views import index
 
 
-class HomepageTests(TestCase):
+class IndexTests(TestCase):
     def setUp(self):
         url = reverse("index")
         self.response = self.client.get(url)
@@ -15,37 +15,15 @@ class HomepageTests(TestCase):
     def test_index_url_name(self):
         self.assertEqual(self.response.status_code, 200)
 
-    def test_homepage_contains_correct_html(self):
-        self.assertContains(self.response, "Local Library Home")
+    def test_index_contains_correct_html(self):
+        self.assertContains(self.response, "Catalog contents")
 
-    def test_homepage_does_not_contain_incorrect_html(self):
+    def test_index_does_not_contain_incorrect_html(self):
         self.assertNotContains(self.response, "About Page")
 
     def test_index_template(self):
         self.assertTemplateUsed(self.response, "index.html")
 
-    def test_home_page_url_resolves_homepageview(self):
-        view = resolve("/")
-        self.assertEqual(view.func.__name__, HomePageView.as_view().__name__)
-
-
-class AboutPageTests(TestCase):
-    def setUp(self):
-        url = reverse("about")
-        self.response = self.client.get(url)
-
-    def test_aboutpage_status_code(self):
-        self.assertEqual(self.response.status_code, 200)
-
-    def test_aboutpage_template(self):
-        self.assertTemplateUsed(self.response, "about.html")
-
-    def test_aboutpage_contains_correct_html(self):
-        self.assertContains(self.response, "About Page")
-
-    def test_aboutpage_does_not_contain_incorrect_html(self):
-        self.assertNotContains(self.response, "Home Page")
-
-    def test_about_page_url_resolves_aboutpageview(self):
-        view = resolve("/catalog/about/")
-        self.assertEqual(view.func.__name__, AboutPageView.as_view().__name__)
+    def test_index_page_url_resolves_index(self):
+        view = resolve("/catalog/")
+        self.assertEqual(view.func.__name__, index.__name__)
