@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% load i18n %}
 
@@ -49,7 +50,7 @@
 
     <form method="post" action="{% url 'account_email' %}" class="col-md-6 add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button name="action_add" class="btn btn-info" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
