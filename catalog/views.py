@@ -33,6 +33,10 @@ class AboutPageView(TemplateView):
     template_name = "about.html"
 
 
+class HomePageView(TemplateView):
+    template_name = "index.html"
+
+
 class BookListView(LoginRequiredMixin, ListView):
     """Generic class-based view for a list of books."""
 
