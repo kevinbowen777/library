@@ -2,6 +2,7 @@
 
 {% block title %}Local Library{% endblock title %}
 
+{% block content %}
 {% block page_header %}
   <div class="jumbotron">
     <h1 class="display-4">Welcome to the local library.</h1>
@@ -10,7 +11,8 @@
         books you're reading. Track your borrowing. Find what you want with
         search. Read our summaries of the titles in our catalog.</p>
 
-    <a class="btn btn-lg btn-primary" href="{% url 'account_signup' %}"
+    <a class="btn btn-lg btn-primary" href="{% url 'signup' %}"
         role="button">Register &raquo;</a>
   </div>
 {% endblock page_header %}
+{% endblock content %}
