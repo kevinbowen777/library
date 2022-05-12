@@ -115,6 +115,7 @@ class AuthorUpdate(PermissionRequiredMixin, UpdateView):
 
 class AuthorDelete(PermissionRequiredMixin, DeleteView):
     model = Author
+    permission_required = "catalog.can_mark_returned"
     success_url = reverse_lazy("authors")
 
 
