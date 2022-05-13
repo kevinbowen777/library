@@ -7,7 +7,7 @@ from .models import BookInstance
 
 
 class RenewBookModelForm(ModelForm):
-    def clean_renewal_date(self):
+    def clean_due_back(self):
         data = self.cleaned_data["due_back"]
 
         # Check if a date is not in the past.
