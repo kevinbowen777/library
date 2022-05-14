@@ -9,10 +9,10 @@ class HomepageTests(SimpleTestCase):
         url = reverse("home")
         self.response = self.client.get(url)
 
-    def test_home_status_code(self):
+    def test_homepage_status_code(self):
         self.assertEqual(self.response.status_code, 200)
 
-    def test_home_url_name(self):
+    def test_homepage_url_name(self):
         self.assertEqual(self.response.status_code, 200)
 
     def test_homepage_contains_correct_html(self):
@@ -21,10 +21,10 @@ class HomepageTests(SimpleTestCase):
     def test_homepage_does_not_contain_incorrect_html(self):
         self.assertNotContains(self.response, "About Page")
 
-    def test_home_template(self):
+    def test_homepage_template(self):
         self.assertTemplateUsed(self.response, "home.html")
 
-    def test_home_page_url_resolves_homepageview(self):
+    def test_homepage_page_url_resolves_homepageview(self):
         view = resolve("/")
         self.assertEqual(view.func.__name__, HomePageView.as_view().__name__)
 
@@ -46,6 +46,6 @@ class AboutPageTests(SimpleTestCase):
     def test_aboutpage_does_not_contain_incorrect_html(self):
         self.assertNotContains(self.response, "Local Library Home")
 
-    def test_about_page_url_resolves_aboutpageview(self):
+    def test_aboutpage_url_resolves_aboutpageview(self):
         view = resolve("/about/")
         self.assertEqual(view.func.__name__, AboutPageView.as_view().__name__)
