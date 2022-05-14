@@ -4,6 +4,8 @@
 {% block title %}Sign Up{% endblock title %}
 
 {% block content %}
+<div class="container">
+  <p>
   <h2>Sign Up</h2>
   <form class="col-md-6" method="post">
     {% csrf_token %}
@@ -11,4 +13,6 @@
     <button class="btn btn-success" type="submit">Sign Up</button>
     <a class="btn btn-info" href="{% url 'home' %}">Cancel</a>
   </form>
+  </p>
+</div>
 {% endblock content %}
