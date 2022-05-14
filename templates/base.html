@@ -71,9 +71,9 @@
           {% endif %}
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
           {% else %}
+          {% endif %}
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'authors' %}">All authors</a></li>
-          {% endif %}
       </ul>
 
       {% endblock %}
