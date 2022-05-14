@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block title %}{% endblock title %}
+
 {% block content %}
+<div class="container">
+  <p>
   <h2>Update book details:</h2>
   <form class="col-md-6" action="" method="post">
     {% csrf_token %}
@@ -11,4 +15,6 @@
     <button class="btn btn-success" type="submit">Submit</button>
     <a class="btn btn-info" href="{% url 'book-detail' book.id %}">Cancel</a>
   </form>
+  </p>
+</div>
 {% endblock content %}
