@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import resolve, reverse
 
-from .views import index
+from catalog.views import index
 
 
 class IndexTests(TestCase):
