@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
+{% block title %}{% endblock title %}
+
 {% block content %}
+<div class="container">
+  <p>
   <h2>Borrowed Books</h2>
     {% if bookinstance_list %}
     <ul>
@@ -13,4 +17,6 @@
     {% else %}
       <p>There are no books borrowed.</p>
     {% endif %}
+  </p>
+</div>
 {% endblock content %}
