@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block title %}{% endblock title %}
+
 {% block content %}
+<div class="container">
+  <p>
     <h2>Renew: {{book_instance.book.title}}</h2>
     <p>Borrower: {{book_instance.borrower}}</p>
     <p {% if book_instance.is_overdue %} class="text-danger"
@@ -16,4 +20,6 @@
         </table>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
+  </p>
+</div>
 {% endblock content %}
