@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<div class="container">
+  <p>
   <h2>Delete Author:</h2>
   <p>Are you sure you want to delete the author: {{ author }}?</p>
   <form action="" method="post">
@@ -12,4 +14,6 @@
     <button class="btn btn-danger" type="submit">Yes, delete.</button>
     <a class="btn btn-info" href="{% url 'author-detail' author.id %}">Cancel</a>
   </form>
+  </p>
+</div>
 {% endblock content %}
