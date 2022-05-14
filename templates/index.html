@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
+  <p>
   <h2>Local Library Home</h3>
   <p>Welcome to LocalLibrary, a website developed by <em>Kevin Bowen</em>!</p>
   <h3>Catalog contents</h3>
@@ -12,4 +14,6 @@
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
   <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+  </p>
+</div>
 {% endblock content %}
