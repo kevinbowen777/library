@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
+{% block title %}{% endblock title %}
+
 {% block content %}
+<div class="container">
+  <p>
   <h2>Add a new author:</h2>
   <form class="col-md-6" action="" method="post">
     {% csrf_token %}
@@ -10,4 +14,6 @@
     </table>
     <button class="btn btn-outline-dark" type="submit">Submit</button>
   </form>
+  </p>
+</div>
 {% endblock %}
