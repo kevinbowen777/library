@@ -69,9 +69,10 @@
             <li><a class="btn btn-outline-dark mb-4" href="{% url 'book-create' %}">Add new book</a>
             {% endif %}
           {% endif %}
+          <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
+          {% else %}
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'books' %}">All books</a></li>
           <li><a class="btn btn-outline-dark mb-2" href="{% url 'authors' %}">All authors</a></li>
-          <li><a class="btn btn-outline-dark mb-2" href="{% url 'my-borrowed' %}">My Borrowed</a></li>
           {% endif %}
       </ul>
 
