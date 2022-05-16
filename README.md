@@ -2,9 +2,9 @@
 
 ---
 ## Features
- - 
- - 
- - 
+ -
+ -
+ -
 
 ### Installation
  - `git clone https://github.com/kevinbowen777/library.git`
@@ -19,7 +19,7 @@
 
 Home page
 ![Home
-Page](https://github.com/kevinbowen777/library/blob/master/images/library_home.png)
+Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_staff.png)
 
 Add items
 ![Add
