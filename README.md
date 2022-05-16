@@ -27,9 +27,8 @@ Catalog Index
 Author list
 ![author_list](https://github.com/kevinbowen777/library/blob/master/images/library_authorlist_staff.png)
 
-List items
-![List
-Items](https://github.com/kevinbowen777/library/blob/master/images/library_list_items.png)
+Book list
+![Book List](https://github.com/kevinbowen777/library/blob/master/images/library_booklist_staff.png)
 
 ---
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/library/blob/master/LICENSE)
