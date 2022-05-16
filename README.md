@@ -21,9 +21,9 @@ Home page
 ![Home
 Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_staff.png)
 
-Add items
+Catalog Index
 ![Add
-items](https://github.com/kevinbowen777/library/blob/master/images/library_add_new_item.png)
+items](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
 
 List items
 ![List
