@@ -264,17 +264,17 @@ class RenewBookInstancesViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
 
         date_3_weeks_in_future = datetime.date.today() + datetime.timedelta(weeks=3)
-        self.assertEqual(response.context["form"].initial["renewal_date"], date_3_weeks_in_future)
+        self.assertEqual(response.context["form"].initial["due_back"], date_3_weeks_in_future)
 
     def test_form_invalid_renewal_date_past(self):
         login = self.client.login(username="testuser2", password="2HJ1vRV0Z&3iD")  # noqa:F841
 
         date_in_past = datetime.date.today() - datetime.timedelta(weeks=1)
         response = self.client.post(
-            reverse("renew-book-librarian", kwargs={"pk": self.test_bookinstance1.pk}), {"renewal_date": date_in_past}
+            reverse("renew-book-librarian", kwargs={"pk": self.test_bookinstance1.pk}), {"due_back": date_in_past}
         )
         self.assertEqual(response.status_code, 200)
-        self.assertFormError(response, "form", "renewal_date", "Invalid date - renewal in past")
+        self.assertFormError(response, "form", "due_back", "Invalid date - renewal in past")
 
     def test_form_invalid_renewal_date_future(self):
         login = self.client.login(username="testuser2", password="2HJ1vRV0Z&3iD")  # noqa:F841
@@ -282,10 +282,10 @@ class RenewBookInstancesViewTest(TestCase):
         invalid_date_in_future = datetime.date.today() + datetime.timedelta(weeks=5)
         response = self.client.post(
             reverse("renew-book-librarian", kwargs={"pk": self.test_bookinstance1.pk}),
-            {"renewal_date": invalid_date_in_future},
+            {"due_back": invalid_date_in_future},
         )
         self.assertEqual(response.status_code, 200)
-        self.assertFormError(response, "form", "renewal_date", "Invalid date - renewal more than 4 weeks ahead")
+        self.assertFormError(response, "form", "due_back", "Invalid date - renewal more than 4 weeks ahead")
 
     def test_redirects_to_all_borrowed_book_list_on_success(self):
         login = self.client.login(username="testuser2", password="2HJ1vRV0Z&3iD")  # noqa:F841
