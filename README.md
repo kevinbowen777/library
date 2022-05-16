@@ -22,8 +22,10 @@ Home page
 Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_staff.png)
 
 Catalog Index
-![Add
-items](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
+![Catalog index](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
+
+Author list
+![author_list](https://github.com/kevinbowen777/library/blob/master/images/library_authorlist_staff.png)
 
 List items
 ![List
