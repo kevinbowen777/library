@@ -111,6 +111,7 @@ def renew_book_librarian(request, pk):
 class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
+    initial = {"date_of_birth": "02/02/1882"}
     permission_required = "catalog.can_mark_returned"
     template_name = "catalog/author_create.html"
 
