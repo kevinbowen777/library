@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     # third-party apps
     "allauth",
     "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.github",
     "bootstrap4",
     "crispy_forms",
     "debug_toolbar",
@@ -134,6 +136,7 @@ SITE_ID = 1
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_UNIQUE_EMAIL = True
 LOGIN_REDIRECT_URL = "index"
 ACCOUNT_LOGOUT_REDIRECT = "home"
