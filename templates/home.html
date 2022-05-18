@@ -6,19 +6,22 @@
 {% block content %}
 {% block page_header %}
   <div class="jumbotron">
-    <h1 class="display-4">Welcome to the local library.</h1>
+    <h1 class="display-4">Welcome to the local library</h1>
 
     <p class="lead">Browse our modest selection of books, and keep a list of the
         books you're reading. Track your borrowing. Find what you want with
         search. Read our summaries of the titles in our catalog.</p>
 
+    <p>
+    <img class="bookcover" src="{% static 'images/tdd_with_python.jpg' %}">
+    <img class="bookcover" src="{% static 'images/dubliners_joyce.jpg' %}">
+    <img class="bookcover" src="{% static 'images/dfp_vincent.png' %}">
+    <img class="bookcover" src="{% static 'images/atoms_metaphors.jpg' %}">
+    <img class="bookcover" src="{% static 'images/programming_python.jpg' %}">
+    </p>
+
     <a class="btn btn-lg btn-primary" href="{% url 'account_signup' %}"
         role="button">Register &raquo;</a>
   </div>
-  <img class="bookcover" src="{% static 'images/tdd_with_python.jpg' %}">
-  <img class="bookcover" src="{% static 'images/dubliners_joyce.jpg' %}">
-  <img class="bookcover" src="{% static 'images/dfp_vincent.png' %}">
-  <img class="bookcover" src="{% static 'images/atoms_metaphors.jpg' %}">
-  <img class="bookcover" src="{% static 'images/programming_python.jpg' %}">
 {% endblock page_header %}
 {% endblock content %}
