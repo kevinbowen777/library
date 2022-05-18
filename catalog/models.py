@@ -41,6 +41,7 @@ class Book(models.Model):
     )
     genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
     language = models.ForeignKey("Language", on_delete=models.SET_NULL, null=True)
+    cover = models.ImageField(upload_to="covers/", blank=True)
 
     class Meta:
         ordering = ["title", "author"]
