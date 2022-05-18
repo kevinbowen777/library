@@ -13,6 +13,7 @@
     {{ form|crispy }}
     <button class="btn btn-success" type="submit">Log In</button>
     <a class="btn btn-secondary" type="submit" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+    <a class="btn btn-info" href="javascript:window.history.back()">Cancel</a>
   <p class="text-muted mt-2">OR</p>
   <a class="btn btn-dark" href="{% provider_login_url 'github' %}">Continue with GitHub</a>
   </form>
