@@ -1,6 +1,12 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
+  font-weight: 500;
+}
+
+.lead {
+  font-weight: 500;
+  font-color: ffffff;
 }
 
 .sidebar-nav {
