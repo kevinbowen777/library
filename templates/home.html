@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} - Welcome{% endblock title %}
 
@@ -14,5 +15,10 @@
     <a class="btn btn-lg btn-primary" href="{% url 'account_signup' %}"
         role="button">Register &raquo;</a>
   </div>
+  <img class="bookcover" src="{% static 'images/tdd_with_python.jpg' %}">
+  <img class="bookcover" src="{% static 'images/dubliners_joyce.jpg' %}">
+  <img class="bookcover" src="{% static 'images/dfp_vincent.png' %}">
+  <img class="bookcover" src="{% static 'images/atoms_metaphors.jpg' %}">
+  <img class="bookcover" src="{% static 'images/programming_python.jpg' %}">
 {% endblock page_header %}
 {% endblock content %}
