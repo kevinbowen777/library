@@ -2,9 +2,10 @@
 
 ---
 ## Features
- -
- -
- -
+ - Add, update, and delete authors and books
+ - Borrow, renew, and return books
+ - Email verification for registration, password recovery
+ - Support for Social logon authentication (OAuth) (e.g. via GitHub)
 
 ### Installation
  - `git clone https://github.com/kevinbowen777/library.git`
@@ -19,7 +20,7 @@
 
 Home page
 ![Home
-Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_staff.png)
+Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_covers.png)
 
 Catalog Index
 ![Catalog index](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
