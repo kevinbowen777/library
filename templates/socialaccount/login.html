@@ -9,5 +9,6 @@
   <form method="post">
     {% csrf_token %}
     <button class="btn btn-success" type="submit">Continue</button>
+    <a class="btn btn-info" href="javascript:window.history.back()">Cancel</a>
   </form>
 {% endblock content %}
