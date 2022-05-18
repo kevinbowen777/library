@@ -5,7 +5,8 @@
 {% block content %}
 <div class="container">
   <p>
-  <h2>Title: {{ book.title }}</h2>
+  <h3>Title: {{ book.title }}</h3>
+    <p><img class="bookcover" src="{{ book.cover.url }}" alt="{{ book.title }}"></p>
     <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
     <p><strong>Summary:</strong> {{ book.summary }}</p>
     <p><strong>ISBN:</strong> {{ book.isbn }}</p>
