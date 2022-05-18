@@ -4,7 +4,12 @@ body {
 }
 
 .sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.bookcover {
+  height: 200px;
+  width: auto;
 }
