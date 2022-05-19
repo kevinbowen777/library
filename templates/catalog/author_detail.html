@@ -16,7 +16,7 @@
       {% endfor %}
       </dl>
   </div>
-  {% if user.is_authenticated %}
+  {% if user.is_staff %}
     <a class="btn btn-danger" href="{% url 'author-delete' author.id %}">Delete Author</a>
     <a class="btn btn-info" href="{% url 'author-update' author.id %}">Update Author</a>
   {% endif %}
