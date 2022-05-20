@@ -2,6 +2,7 @@ import datetime
 
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
@@ -147,3 +148,22 @@ class BookDelete(PermissionRequiredMixin, DeleteView):
     model = Book
     success_url = reverse_lazy("books")
     permission_required = "catalog.can_mark_returned"
+
+
+class SearchResultsListView(ListView):
+    model = Book
+    context_object_name = "books"
+    template_name = "catalog/search_results.html"
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        return Book.objects.filter(
+            Q(title__icontains=query)
+            | Q(author__first_name__icontains=query)
+            | Q(author__middle_name__icontains=query)
+            | Q(author__last_name__icontains=query)
+            | Q(language__name__icontains=query)
+            | Q(publisher__icontains=query)
+            | Q(pubdate__icontains=query)
+            | Q(genre__name=query)
+        ).distinct()
