@@ -158,12 +158,12 @@ class SearchResultsListView(ListView):
     def get_queryset(self):
         query = self.request.GET.get("q")
         return Book.objects.filter(
-            Q(title__icontains=query)  # noqa:W503
-            | Q(author__first_name__icontains=query)  # noqa:W503
-            | Q(author__middle_name__icontains=query)  # noqa:W503
-            | Q(author__last_name__icontains=query)  # noqa:W503
-            | Q(language__name__icontains=query)  # noqa:W503
-            | Q(publisher__icontains=query)  # noqa:W503
-            | Q(pubdate__icontains=query)  # noqa:W503
-            | Q(genre__name=query)  # noqa:W503
+            Q(title__icontains=query)
+            | Q(author__first_name__icontains=query)
+            | Q(author__middle_name__icontains=query)
+            | Q(author__last_name__icontains=query)
+            | Q(language__name__icontains=query)
+            | Q(publisher__icontains=query)
+            | Q(pubdate__icontains=query)
+            | Q(genre__name=query)
         ).distinct()
