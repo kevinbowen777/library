@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -14,6 +15,12 @@
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
   <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+  <p>
+    <h3>Search our catalog:</h3>
+    <form class="form-inline mt-2 mt-md-0" action="{% url 'search-results' %}" method="get">
+      <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </p>
   </p>
 </div>
 {% endblock content %}
