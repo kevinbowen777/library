@@ -147,3 +147,9 @@ class BookDelete(PermissionRequiredMixin, DeleteView):
     model = Book
     success_url = reverse_lazy("books")
     permission_required = "catalog.can_mark_returned"
+
+
+class SearchResultsListView(ListView):
+    model = Book
+    context_object_name = "books"
+    template_name = "catalog/search_results.html"
