@@ -153,9 +153,17 @@ class BookDelete(PermissionRequiredMixin, DeleteView):
 class SearchResultsListView(ListView):
     model = Book
     context_object_name = "books"
-    # template_name = "catalog/book_list.html"
     template_name = "catalog/search_results.html"
-    # queryset = Book.objects.filter(title__icontains="python")
 
     def get_queryset(self):
-        return Book.objects.filter(Q(title__icontains="beginners") | Q(title__icontains="api"))
+        query = self.request.GET.get("q")
+        return Book.objects.filter(
+            Q(title__icontains=query)  # noqa:W503
+            | Q(author__first_name__icontains=query)  # noqa:W503
+            | Q(author__middle_name__icontains=query)  # noqa:W503
+            | Q(author__last_name__icontains=query)  # noqa:W503
+            | Q(language__name__icontains=query)  # noqa:W503
+            | Q(publisher__icontains=query)  # noqa:W503
+            | Q(pubdate__icontains=query)  # noqa:W503
+            | Q(genre__name=query)  # noqa:W503
+        ).distinct()
