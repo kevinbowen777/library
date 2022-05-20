@@ -153,3 +153,4 @@ class SearchResultsListView(ListView):
     model = Book
     context_object_name = "books"
     template_name = "catalog/search_results.html"
+    queryset = Book.objects.filter(title__icontains="python")
