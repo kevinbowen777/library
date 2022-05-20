@@ -2,6 +2,7 @@ import datetime
 
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
@@ -152,5 +153,9 @@ class BookDelete(PermissionRequiredMixin, DeleteView):
 class SearchResultsListView(ListView):
     model = Book
     context_object_name = "books"
+    # template_name = "catalog/book_list.html"
     template_name = "catalog/search_results.html"
-    queryset = Book.objects.filter(title__icontains="python")
+    # queryset = Book.objects.filter(title__icontains="python")
+
+    def get_queryset(self):
+        return Book.objects.filter(Q(title__icontains="beginners") | Q(title__icontains="api"))
