@@ -5,6 +5,7 @@
 {% block content %}
 <div class="container">
   <p>
+  <h2>Search Results</h2>
   {% for book in books %}
     <div>
       <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
