@@ -10,12 +10,13 @@
       <p><img class="bookcover" src="{{ book.cover.url }}" alt="{{ book.title }}"></p>
     {% endif %}
     <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
-    <p><strong>Summary:</strong> {{ book.summary }}</p>
-    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
     <p><strong>Pages:</strong> {{ book.pages }}</p>
     <p><strong>Publisher:</strong> {{ book.publisher }}</p>
-    <p><strong>Language:</strong> {{ book.language }}</p>
+    <p><strong>Published:</strong> {{ book.pubdate }}</p>
+    <p><strong>Summary:</strong> {{ book.summary }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
     <p><strong>Genre:</strong> {{ book.genre.all|join:", " }}</p>
+    <p><strong>Language:</strong> {{ book.language }}</p>
   {% if user.is_staff %}
     <a class="btn btn-danger" href="{% url 'book-delete' book.id %}">Delete Book</a>
     <a class="btn btn-info" href="{% url 'book-update' book.id %}">Update Book</a>
