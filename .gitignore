@@ -1,6 +1,7 @@
 # updated 20220207
 # from: https://github.com/github/gitignore
 #
+*.sqlite3
 LOCAL_APP_NOTES
 LOCAL_APP_NOTES~
 app.db
