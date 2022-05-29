@@ -11,8 +11,8 @@
  - `git clone https://github.com/kevinbowen777/library.git`
  - `cd library`
  - `docker-compose up --build`
- - `docker-compose python manage.py migrate`
- - `docker-compose python manage.py createsuperuser`
+ - `docker-compose exec web python manage.py migrate`
+ - `docker-compose exec web python manage.py createsuperuser`
  - Open browser to http://127.0.0.1:8000
 
 ---
