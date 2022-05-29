@@ -158,10 +158,11 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
 
 # django-debug-toolbar
-# import socket
+
+import socket
 
 # Uncomment the following two lines for using toolbar in Docker:
-# hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-# INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 # The following line is for toolbar use locally:
 # INTERNAL_IPS = ["127.0.0.1"]
