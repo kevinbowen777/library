@@ -13,8 +13,12 @@ class RenewBookFormTest(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_renew_form_date_too_far_in_future(self):
-        """Test form is invalid if renewal_date more than 4 weeks from today."""
-        date = datetime.date.today() + datetime.timedelta(weeks=4) + datetime.timedelta(days=1)
+        """Test form invalid if renewal_date more than 4 weeks from today."""
+        date = (
+            datetime.date.today()
+            + datetime.timedelta(weeks=4)
+            + datetime.timedelta(days=1)
+        )
         form = RenewBookForm(data={"renewal_date": date})
         self.assertFalse(form.is_valid())
 
@@ -34,10 +38,14 @@ class RenewBookFormTest(TestCase):
         """Test renewal_date label is 'Renewal Date'."""
         form = RenewBookForm()
         self.assertTrue(
-            form.fields["renewal_date"].label is None or form.fields["renewal_date"].label == "Renewal date"
+            form.fields["renewal_date"].label is None
+            or form.fields["renewal_date"].label == "Renewal date"
         )
 
     def test_renew_form_date_field_help_text(self):
         """Test renewal_date help_text is as expected."""
         form = RenewBookForm()
-        self.assertEqual(form.fields["renewal_date"].help_text, "Enter a date between now and 4 weeks (default 3).")
+        self.assertEqual(
+            form.fields["renewal_date"].help_text,
+            "Enter a date between now and 4 weeks (default 3).",
+        )

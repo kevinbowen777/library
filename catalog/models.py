@@ -17,7 +17,9 @@ class Genre(models.Model):
 
 
 class Language(models.Model):
-    name = models.CharField(max_length=200, help_text="Enter the book's language")
+    name = models.CharField(
+        max_length=200, help_text="Enter the book's language"
+    )
 
     class Meta:
         ordering = ["name"]
@@ -29,18 +31,28 @@ class Language(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, null=True)
-    pages = models.IntegerField(null=True, blank=True, help_text="Number of Pages")
+    pages = models.IntegerField(
+        null=True, blank=True, help_text="Number of Pages"
+    )
     publisher = models.CharField(max_length=40, blank=True)
-    pubdate = models.DateField(null=True, blank=True, help_text="Date Published")
-    summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book.")
+    pubdate = models.DateField(
+        null=True, blank=True, help_text="Date Published"
+    )
+    summary = models.TextField(
+        max_length=1000, help_text="Enter a brief description of the book."
+    )
     isbn = models.CharField(
         "ISBN",
         max_length=13,
         unique=True,
-        help_text="13 Character <a href='https://www.isbn-international.org/content/what-isbn'>ISBN number</a>",
+        help_text="13 Character <a href='https://www.isbn-international.org/content/what-isbn'>ISBN number</a>",  # noqa:E501
     )
-    genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
-    language = models.ForeignKey("Language", on_delete=models.SET_NULL, null=True)
+    genre = models.ManyToManyField(
+        Genre, help_text="Select a genre for this book"
+    )
+    language = models.ForeignKey(
+        "Language", on_delete=models.SET_NULL, null=True
+    )
     cover = models.ImageField(upload_to="covers/", blank=True)
 
     class Meta:
@@ -63,12 +75,16 @@ class BookInstance(models.Model):
     """Represents a specific copy of a book"""
 
     id = models.UUIDField(
-        primary_key=True, default=uuid.uuid4, help_text="Unique ID for this book across whole library"
+        primary_key=True,
+        default=uuid.uuid4,
+        help_text="Unique ID for this book across whole library",
     )
     book = models.ForeignKey("Book", on_delete=models.RESTRICT, null=True)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
-    borrower = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True)
+    borrower = models.ForeignKey(
+        get_user_model(), on_delete=models.SET_NULL, null=True, blank=True
+    )
 
     @property
     def is_overdue(self):
@@ -101,7 +117,9 @@ class BookInstance(models.Model):
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
-    middle_name = models.CharField(max_length=100, null=True, blank=True, help_text="Middle Name(initial)")
+    middle_name = models.CharField(
+        max_length=100, null=True, blank=True, help_text="Middle Name(initial)"
+    )
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
     date_of_death = models.DateField("Died", null=True, blank=True)

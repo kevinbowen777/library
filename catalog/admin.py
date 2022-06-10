@@ -31,8 +31,19 @@ class AuthorAdmin(admin.ModelAdmin):
      - adds inline addition of books in author view (inlines)
     """
 
-    list_display = ("last_name", "first_name", "middle_name", "date_of_birth", "date_of_death")
-    fields = ["first_name", "middle_name", "last_name", ("date_of_birth", "date_of_death")]
+    list_display = (
+        "last_name",
+        "first_name",
+        "middle_name",
+        "date_of_birth",
+        "date_of_death",
+    )
+    fields = [
+        "first_name",
+        "middle_name",
+        "last_name",
+        ("date_of_birth", "date_of_death"),
+    ]
     inlines = [BooksInline]
 
 
