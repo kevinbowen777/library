@@ -75,6 +75,10 @@ django-debug-toolbar = "^3.4.0"
 tblib = "^1.7.0"
 django-test-plus = "^2.2.0"
 pytest-sugar = "^0.9.4"
+django-extensions = "^3.1.5"
+ipython = "^8.4.0"
+friendly = "^0.5.29"
+colorama = "^0.4.4"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings"
