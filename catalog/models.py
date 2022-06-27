@@ -1,5 +1,5 @@
-import uuid
 from datetime import date
+import uuid
 
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -45,7 +45,7 @@ class Book(models.Model):
         "ISBN",
         max_length=13,
         unique=True,
-        help_text="13 Character <a href='https://www.isbn-international.org/content/what-isbn'>ISBN number</a>",  # noqa:E501
+        help_text="13 Character <a href='https://www.isbn-international.org/content/what-isbn'>ISBN number</a>",  # noqa:E501,B950
     )
     genre = models.ManyToManyField(
         Genre, help_text="Select a genre for this book"

@@ -6,7 +6,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from catalog.models import Author, Book, BookInstance, Genre, Language
+from ..models import Author, Book, BookInstance, Genre, Language
 
 
 class AuthorListViewTest(TestCase):

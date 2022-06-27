@@ -2,7 +2,7 @@ import datetime
 
 from django.test import TestCase
 
-from catalog.forms import RenewBookForm
+from ..forms import RenewBookForm
 
 
 class RenewBookFormTest(TestCase):
