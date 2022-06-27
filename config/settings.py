@@ -1,4 +1,7 @@
+"""Settings for the library project."""
 from pathlib import Path
+
+# import socket  # noqa: E402 # Comment out if not using debug_toolbar
 
 from environs import Env
 
@@ -32,7 +35,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.github",
     "bootstrap4",
     "crispy_forms",
-    "debug_toolbar",
+    # "debug_toolbar",
     "django_extensions",
     # Local applications
     "accounts",
@@ -43,7 +46,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -85,16 +88,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa:E501
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa:E501,B950
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa:E501
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",  # noqa:E501,B950
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa:E501
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",  # noqa:E501,B950
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa:E501
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",  # noqa:E501,B950
     },
 ]
 
@@ -159,11 +162,9 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
 
 # django-debug-toolbar
-
-import socket
-
-# Uncomment the following two lines for using toolbar in Docker:
-hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
-INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+# Note: disable when running Nox tests
+# Use the following in Docker only:
+# hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+# INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
 # The following line is for toolbar use locally:
 # INTERNAL_IPS = ["127.0.0.1"]
