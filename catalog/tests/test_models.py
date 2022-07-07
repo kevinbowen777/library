@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from ..models import Author, Genre
+from ..models import Author, Genre, Language
 
 
 class GenreModelTest(TestCase):
@@ -10,6 +10,15 @@ class GenreModelTest(TestCase):
     def test_genre___str__(self):
         assert self.genre.__str__() == self.genre.name
         assert str(self.genre) == self.genre.name
+
+
+class LanguageModelTest(TestCase):
+    def setUp(self):
+        self.language = Language.objects.create(name="English")
+
+    def test_genre___str__(self):
+        assert self.language.__str__() == self.language.name
+        assert str(self.language) == self.language.name
 
 
 class AuthorModelTest(TestCase):
