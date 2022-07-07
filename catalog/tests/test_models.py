@@ -1,6 +1,15 @@
 from django.test import TestCase
 
-from ..models import Author
+from ..models import Author, Genre
+
+
+class GenreModelTest(TestCase):
+    def setUp(self):
+        self.genre = Genre.objects.create(name="Fiction")
+
+    def test_genre___str__(self):
+        assert self.genre.__str__() == self.genre.name
+        assert str(self.genre) == self.genre.name
 
 
 class AuthorModelTest(TestCase):
