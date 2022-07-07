@@ -8,6 +8,11 @@ class AuthorModelTest(TestCase):
     def setUpTestData(cls):
         """Set up non-modified objects used by all test methods."""
         Author.objects.create(first_name="Thomas", last_name="Pynchon")
+        Author.objects.create(
+            first_name="William",
+            last_name="Burroughs",
+            middle_name="S.",
+        )
 
     def test_first_name_label(self):
         author = Author.objects.get(id=1)
@@ -51,3 +56,15 @@ class AuthorModelTest(TestCase):
         author = Author.objects.get(id=1)
         # This will also fail if the urlconf is not defined.
         self.assertEqual(author.get_absolute_url(), "/catalog/author/1")
+
+    def test_middlename__str__(self):
+        author = Author.objects.get(id=2)
+        if author.middle_name is not None:
+            self.assertEqual(
+                author.__str__(),
+                f"{author.last_name}, {author.first_name} {author.middle_name}",
+            )
+        else:
+            self.assertEqual(
+                author.__str__(), f"{author.last_name}, {author.first_name}"
+            )
