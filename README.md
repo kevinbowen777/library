@@ -16,6 +16,10 @@
  - Open browser to http://127.0.0.1:8000
 
 ---
+
+### Live Demo on Heroku:
+ - [library](https://kbowen-django-library.herokuapp.com/)
+ 
 ## Screenshots
 
 Home page
