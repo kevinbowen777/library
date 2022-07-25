@@ -3,8 +3,8 @@ from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
 
-# library_members, created = Group.objects.get_or_create(name="Library Members")
-# librarians, created = Group.objects.get_or_create(name="Librarians")
+library_members, created = Group.objects.get_or_create(name="Library Members")
+librarians, created = Group.objects.get_or_create(name="Librarians")
 
 
 class CustomUser(AbstractUser):
