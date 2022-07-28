@@ -10,10 +10,17 @@
 ### Installation
  - `git clone https://github.com/kevinbowen777/library.git`
  - `cd library`
- - `docker-compose up --build`
- - `docker-compose exec web python manage.py migrate`
- - `docker-compose exec web python manage.py createsuperuser`
- - Open browser to http://127.0.0.1:8000
+ - Local installation:
+     - `poetry shell`
+     - `poetry install`
+     - `python manage.py migrate`
+     - `python manage.py createsuperuser`
+     - `python manage.py runserver`
+ - Docker installation:
+     - `docker-compose up --build`
+     - `docker-compose python manage.py migrate`
+     - `docker-compose python manage.py createsuperuser`
+ - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/admin/
 
 ---
 
