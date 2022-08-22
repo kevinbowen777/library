@@ -1,5 +1,5 @@
-{% extends 'base.html' %}
-{% load socialaccount %}
+<!-- templates/account/signup.html -->
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block title %}Sign Up{% endblock title %}
@@ -8,13 +8,11 @@
 <div class="container">
   <p>
   <h2>Sign Up</h2>
-  <form class="col-md-6" method="post">
+  <form class="col-md-4" method="post">
     {% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-success" type="submit">Sign Up</button>
-    <a class="btn btn-info" href="{% url 'home' %}">Cancel</a>
-  <p class="text-muted mt-2">OR</p>
-  <a class="btn btn-dark" href="{% provider_login_url 'github' %}">Continue with GitHub</a>
+    <a class="btn btn-info" href="javascript:window.history.back()">Cancel</a>
   </form>
   </p>
 </div>
