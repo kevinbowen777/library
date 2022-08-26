@@ -80,7 +80,7 @@ class PasswordResetDoneTests(TestCase):
         self.assertTemplateUsed(
             self.response, "account/password_reset_done.html"
         )
-        self.assertContains(self.response, "Password reset complete")
+        self.assertContains(self.response, "We have sent you an e-mail")
         self.assertNotContains(self.response, "This does not belong here.")
 
 
@@ -111,5 +111,5 @@ class PasswordChangeDoneTests(TestCase):
         self.assertTemplateUsed(
             self.response, "account/password_reset_done.html"
         )
-        self.assertContains(self.response, "Password Reset Complete")
+        self.assertContains(self.response, "We have sent you an e-mail")
         self.assertNotContains(self.response, "This does not belong here.")
