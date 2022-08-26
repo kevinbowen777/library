@@ -1,6 +1,39 @@
 from django.test import TestCase
 
-from ..models import Author, Genre, Language
+from ..models import Author, Book, Genre, Language
+
+
+class BookModelTest(TestCase):
+    def setUp(self):
+        # Create a book
+        test_author = Author.objects.create(
+            first_name="John", last_name="Smith"
+        )
+        self.genre = Genre.objects.create(name="Fantasy")  # noqa:F841
+        test_language = Language.objects.create(name="English")
+        self.book = Book.objects.create(
+            title="Book Title",
+            summary="My book summary",
+            isbn="ABCDEFG",
+            author=test_author,
+            language=test_language,
+        )
+        # Create genre as a post-step
+        genre_objects_for_book = Genre.objects.all()
+        self.book.genre.set(genre_objects_for_book)
+        # save.book.save()
+
+    def test_book___str__(self):
+        assert self.book.__str__() == self.book.title
+        assert str(self.book) == self.book.title
+
+    def test_get_absolute_url(self):
+        url = self.book.get_absolute_url()
+        assert url == f"/catalog/book/{self.book.id}"
+
+    def test_genre___str__(self):
+        assert self.genre.__str__() == self.genre.name
+        assert str(self.genre) == self.genre.name
 
 
 class GenreModelTest(TestCase):
