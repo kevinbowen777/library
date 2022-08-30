@@ -1,4 +1,14 @@
-## library  - A lending library built using the Django web framework
+## library  
+
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/library.svg)](https://github.com/kevinbowen777/library/issues)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+- A lending library built using the Django web framework
 
 ---
 ## Features
