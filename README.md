@@ -1,8 +1,8 @@
-## library  
+## library
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
   [![GitHub Issues](https://img.shields.io/github/issues/kevinbowen777/library.svg)](https://github.com/kevinbowen777/library/issues)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
@@ -14,9 +14,12 @@
 ## Features
  - Add, update, and delete authors and books
  - Borrow, renew, and return books
- - Email verification for registration, password recovery
- - Support for Social logon authentication (OAuth) (e.g. via GitHub)
+ - User registration with email verification & social(GitHub) login
+ - Bootstrap4 & crispy-forms decorations
+ - Customizable user profiles with bio, profile picture & country flags
+ - Nox testing sessions (black, linting, pytest, coverage, Sphinx doc generation)
 
+---
 ### Installation
  - `git clone https://github.com/kevinbowen777/library.git`
  - `cd library`
@@ -36,12 +39,11 @@
 
 ### Live Demo on Heroku:
  - [library](https://kbowen-django-library.herokuapp.com/)
- 
+
 ## Screenshots
 
 Home page
-![Home
-Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_covers.png)
+![Home Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_covers.png)
 
 Catalog Index
 ![Catalog index](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
@@ -57,5 +59,4 @@ Book list
 ---
 ### Reporting Bugs
 
-   Visit the [Issues page](https://github.com/kevinbowen777/library/issues)
-      to view currently open bug reports or open a new issue.
+   Visit the [Issues page](https://github.com/kevinbowen777/library/issues) to view currently open bug reports or open a new issue.
