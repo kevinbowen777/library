@@ -10,8 +10,17 @@
 
 - A lending library built using the Django web framework
 
+##### Table of Contents
+ - [Features](#features)
+ - [Installation](#installation)
+ - [Testing](#testing)
+ - [Application Demo](#application-demo)
+ - [Screenshots](#screenshots)
+ - [Reporting Bugs](#reporting-bugs)
+
 ---
-## Features
+
+### Features
  - Application
      - Add, update, and delete authors and books
      - Borrow, renew, and return books
@@ -19,16 +28,15 @@
      - Bootstrap4 & crispy-forms decorations
      - Customizable user profile pages with bio, profile pic, & country flags
      - image carousel
-     - pagination template
  - Dev/testing
-     - basic module testing templates
+     - Basic module testing templates
      - Coverage reports
      - Debug-toolbar available
      - Examples of using Factories & pytest fixtures in account app testing
      - `shell_plus` with IPython via `django-extensions` package
      - Nox testing sessions for latest Python 3.9, 3.10, and 3.11
          - black
-         - Sphinx documentaion generations
+         - Sphinx documentaion generation
          - linting
              - flake8
              - flake8-bugbear
@@ -38,6 +46,7 @@
          - pytest sessions with coverage
 
 ---
+
 ### Installation
  - `git clone https://github.com/kevinbowen777/library.git`
  - `cd library`
@@ -54,6 +63,7 @@
  - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/admin/
 
 ---
+
 ### Testing
  - `docker-compose exec web python manage.py test`
  - `coverage run -m pytest`
@@ -63,8 +73,11 @@
 
 ---
 
-### Live Demo on Heroku:
+### Application Demo
+A live application demonstration hosted at Heroku
  - [library](https://kbowen-django-library.herokuapp.com/)
+
+---
 
 ## Screenshots
 
@@ -80,8 +93,6 @@ Author list
 Book list
 ![Book List](https://github.com/kevinbowen777/library/blob/master/images/library_booklist_staff.png)
 
----
-[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/kevinbowen777/library/blob/master/LICENSE)
 ---
 ### Reporting Bugs
 
