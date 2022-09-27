@@ -53,7 +53,15 @@
  - Local installation:
      - `poetry shell`
      - `poetry install`
+     - Comment out the following lines in `accounts/models.py`:
+        `library_members, created = Group.objects.get_or_create(name="Library Members")`
+        `librarians, created = Group.objects.get_or_create(name="Librarians")`
      - `python manage.py migrate`
+     - `python manage.py shell_plus`
+         - Create the following groups in the shell:
+            - `Group.objects.get_or_create(name="Library Members")`
+            - `Group.objects.get_or_create(name="Librarians")`
+     - Uncomment the lines previously indicated in `accounts/models.py`
      - `python manage.py createsuperuser`
      - `python manage.py runserver`
  - Docker installation:
