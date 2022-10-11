@@ -6,6 +6,7 @@ library
    :maxdepth: 1
 
    license
+   package_index
 
 .. contents:: Table of Contents
    :local:
