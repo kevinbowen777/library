@@ -67,8 +67,9 @@
      - `python manage.py runserver`
  - Docker installation:
      - `docker-compose up --build`
-     - `docker-compose python manage.py migrate`
-     - `docker-compose python manage.py createsuperuser`
+     - `docker-compose exec web python manage.py migrate`
+     - `docker-compose exec web python manage.py createsuperuser`
+     - `docker-compose exec web python manage.py shell_plus`
  - Browse to http://127.0.0.1:8000 or http://127.0.0.1:8000/admin/
 
 ---
