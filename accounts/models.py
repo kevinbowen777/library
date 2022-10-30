@@ -8,7 +8,7 @@ librarians, created = Group.objects.get_or_create(name="Librarians")
 
 
 class CustomUser(AbstractUser):
-    """Default custom user model for django-start template project.
+    """Custom user model for library project.
     If adding fields that need to be filled at user signup,
     check forms.SignupForm and forms.SocialSignupForms accordingly.
     """
