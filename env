@@ -28,6 +28,7 @@ export COMPOSE_PROJECT_NAME=library
 export WEB_CONCURRENCY=1
 #export PYTHON_MAX_THREADS=1
 
+# python -c 'import secrets; print(secrets.token_urlsafe(38))'
 export SECRET_KEY=UUrbwBtiSoZDXFB_Sx1sf4evqozo2iI6mg3xyUouTsI
 # Uncomment the following three lines to run a sqlite3 db locally.
 # ENGINE_DB=django.db.backends.sqlite3
