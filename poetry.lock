@@ -1780,7 +1780,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "d1a66c5b81d88d84058299a1cb443b1fd2508d426b65b1b662728bf62b16c59f"
+content-hash = "27d13f8f86f993ac0f1d6da87022850fbf63d2b8b04af450e9663abe388bf12c"
 
 [metadata.files]
 alabaster = [
