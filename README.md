@@ -96,24 +96,25 @@
 ---
 
 ### Application Demo
-A live application demonstration hosted at Heroku
- - [library](https://kbowen-django-library.herokuapp.com/)
+A live application demonstration:
+
+TBD
 
 ---
 
 ## Screenshots
 
 Home page
-![Home Page](https://github.com/kevinbowen777/library/blob/master/images/library_homepage_covers.png)
+![Home Page](images/library_homepage_covers.png)
 
 Catalog Index
-![Catalog index](https://github.com/kevinbowen777/library/blob/master/images/library_index_staff.png)
+![Catalog index](images/library_index_staff.png)
 
 Author list
-![author_list](https://github.com/kevinbowen777/library/blob/master/images/library_authorlist_staff.png)
+![author_list](images/library_authorlist_staff.png)
 
 Book list
-![Book List](https://github.com/kevinbowen777/library/blob/master/images/library_booklist_staff.png)
+![Book List](images/library_booklist_staff.png)
 
 ---
 ### Reporting Bugs
