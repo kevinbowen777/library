@@ -64,7 +64,7 @@ gunicorn = "~=20.1.0"
 black = "^22.3.0"
 flake8 = "^6.0.0"
 pre-commit = "^2.19.0"
-coverage = {extras = ["toml"], version = "^6.4.1"}
+coverage = {extras = ["toml"], version = "^7.0.0"}
 pytest-cov = "^4.0.0"
 pytest-django = "^4.5.2"
 django-debug-toolbar = "^3.4.0"
