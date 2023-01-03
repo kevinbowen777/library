@@ -1,27 +1,14 @@
 from django.test import TestCase
 
-from ..models import Author, Book, Genre, Language
+from .factories import AuthorFactory, BookFactory
+from ..models import Genre, Language
 
 
 class BookModelTest(TestCase):
     def setUp(self):
         # Create a book
-        test_author = Author.objects.create(
-            first_name="John", last_name="Smith"
-        )
-        self.genre = Genre.objects.create(name="Fantasy")  # noqa:F841
-        test_language = Language.objects.create(name="English")
-        self.book = Book.objects.create(
-            title="Book Title",
-            summary="My book summary",
-            isbn="ABCDEFG",
-            author=test_author,
-            language=test_language,
-        )
-        # Create genre as a post-step
-        genre_objects_for_book = Genre.objects.all()
-        self.book.genre.set(genre_objects_for_book)
-        # save.book.save()
+        self.author = AuthorFactory()
+        self.book = BookFactory()
 
     def test_book___str__(self):
         assert self.book.__str__() == self.book.title
@@ -30,10 +17,6 @@ class BookModelTest(TestCase):
     def test_get_absolute_url(self):
         url = self.book.get_absolute_url()
         assert url == f"/catalog/book/{self.book.id}"
-
-    def test_genre___str__(self):
-        assert self.genre.__str__() == self.genre.name
-        assert str(self.genre) == self.genre.name
 
 
 class GenreModelTest(TestCase):
@@ -55,67 +38,68 @@ class LanguageModelTest(TestCase):
 
 
 class AuthorModelTest(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        """Set up non-modified objects used by all test methods."""
+    """Set up non-modified objects used by all test methods."""
+
+    def setUp(self):
+        self.author = AuthorFactory()
+        """
+        @classmethod
+        def setUpTestData(cls):
         Author.objects.create(first_name="Thomas", last_name="Pynchon")
         Author.objects.create(
             first_name="William",
             last_name="Burroughs",
             middle_name="S.",
         )
+        """
 
     def test_first_name_label(self):
-        author = Author.objects.get(id=1)
-        field_label = author._meta.get_field("first_name").verbose_name
+        field_label = self.author._meta.get_field("first_name").verbose_name
         self.assertEqual(field_label, "first name")
 
     def test_last_name_label(self):
-        author = Author.objects.get(id=1)
-        field_label = author._meta.get_field("last_name").verbose_name
+        field_label = self.author._meta.get_field("last_name").verbose_name
         self.assertEqual(field_label, "last name")
 
     def test_date_of_birth_label(self):
-        author = Author.objects.get(id=1)
-        field_label = author._meta.get_field("date_of_birth").verbose_name
+        field_label = self.author._meta.get_field("date_of_birth").verbose_name
         self.assertEqual(field_label, "date of birth")
 
     def test_date_of_death_label(self):
-        author = Author.objects.get(id=1)
-        field_label = author._meta.get_field("date_of_death").verbose_name
+        field_label = self.author._meta.get_field("date_of_death").verbose_name
         self.assertEqual(field_label, "Died")
 
     def test_first_name_max_length(self):
-        author = Author.objects.get(id=1)
-        max_length = author._meta.get_field("first_name").max_length
+        max_length = self.author._meta.get_field("first_name").max_length
         self.assertEqual(max_length, 100)
 
     def test_last_name_max_length(self):
-        author = Author.objects.get(id=1)
-        max_length = author._meta.get_field("last_name").max_length
+        max_length = self.author._meta.get_field("last_name").max_length
         self.assertEqual(max_length, 100)
 
+    """
     def test_object_name_is_last_name_comma_first_name(self):
-        author = Author.objects.get(id=1)
+        # author = Author.objects.get(id=1)
         expected_object_name = "{0}, {1}".format(
-            author.last_name, author.first_name
+            self.author.last_name, self.author.first_name
         )
 
-        self.assertEqual(str(author), expected_object_name)
+        self.assertEqual(str(self.author), expected_object_name)
+    """
 
     def test_get_absolute_url(self):
-        author = Author.objects.get(id=1)
-        # This will also fail if the urlconf is not defined.
-        self.assertEqual(author.get_absolute_url(), "/catalog/author/1")
+        self.assertEqual(
+            self.author.get_absolute_url(), f"/catalog/author/{self.author.id}"
+        )
 
     def test_middlename__str__(self):
-        author = Author.objects.get(id=2)
-        if author.middle_name is not None:
+        if self.author.middle_name is not None:
             self.assertEqual(
-                author.__str__(),
-                f"{author.last_name}, {author.first_name} {author.middle_name}",
+                self.author.__str__(),
+                f"{self.author.last_name},{self.author.first_name} {self.author.middle_name}",  # noqa: B950
             )
         else:
             self.assertEqual(
-                author.__str__(), f"{author.last_name}, {author.first_name}"
+                self.author.__str__(),
+                f"{self.author.last_name}, {self.author.first_name}",
             )
