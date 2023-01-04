@@ -1,13 +1,13 @@
 [run]
 include = accounts/*, catalog/*, config/*, pages/*
 omit =
-    */__init__.py,
+    *conftest.py,
     *manage.py,
     *settings*.py,
+    *test.py,
+    *wsgi.py,
+    */__init__.py,
     */migrations/*,
     */factories.py,
     */tests/*,
-    *test.py,
-    *wsgi.py,
-    *conftest.py,
 plugins = django_coverage_plugin

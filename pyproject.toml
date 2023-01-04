@@ -22,18 +22,15 @@ source = ["accounts", "catalog", "config", "pages"]
 branch = true
 source = ["config"]
 omit = [
-    "*/__init__.py",
+    "*conftest.py",
     "*manage.py",
     "*settings*.py",
-    "*urls.py",
-    "*admin.py",
-    "*migrations/*",
-    "*tests/*",
-    "*test_*.py",
-    "*tests.py",
+    "*test.py",
     "*wsgi.py",
-    "*conftest.py",
-    "*/extra*",
+    "*/__init__.py",
+    "*/migrations/*",
+    "*/factories.py",
+    "*/tests/*",
 ]
 
 [tool.coverage.report]
@@ -85,6 +82,7 @@ pip-check = "^2.7"
 pip-audit = "^2.4.3"
 Sphinx = "^6.0.0"
 flake8-import-order = "^0.18.2"
+django-coverage-plugin = "^3.0.0"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings"
