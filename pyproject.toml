@@ -45,7 +45,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "4.1.4"
+Django = "4.1.5"
 environs = {extras = ["django"], version = "^9.5.0"}
 django-bootstrap4 = "^22.1"
 django-crispy-forms = "^1.14.0"
@@ -80,7 +80,7 @@ safety = "^2.3.5"
 factory-boy = "3.0.1"
 pip-check = "^2.7"
 pip-audit = "^2.4.3"
-Sphinx = "^6.0.0"
+Sphinx = "6.0.0"
 flake8-import-order = "^0.18.2"
 django-coverage-plugin = "^3.0.0"
 
