@@ -191,7 +191,7 @@ CRISPY_CLASS_CONVERTERS = {
 }
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = str(BASE_DIR.joinpath("media"))
+MEDIA_ROOT = BASE_DIR / "media"
 
 ADMINS = [("Kevin Bowen", "kevinbowen@protonmail.com")]
 MANAGERS = ADMINS
