@@ -39,9 +39,9 @@ export POSTGRES_USER=django_admin
 export POSTGRES_PASSWORD=<postgres_password>
 export POSTGRES_DB=library
 # Use localhost for self-hosted PostgreSQL
-# export POSTGRES_HOST=localhost
+export POSTGRES_HOST=localhost
 # Use 'db' for Docker containers
-export POSTGRES_HOST=db
+# export POSTGRES_HOST=db
 export POSTGRES_PORT=5432
 
 # Should Docker restart your containers if they go down in unexpected ways?
