@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from .factories import AuthorFactory, BookFactory
 from ..models import Genre, Language
+from .factories import AuthorFactory, BookFactory
 
 
 class BookModelTest(TestCase):
