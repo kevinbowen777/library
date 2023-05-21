@@ -37,7 +37,7 @@ show_missing = true
 
 [tool.poetry]
 name = "library"
-version = "0.1.0"
+version = "0.2.0"
 description = "A lending library built using the Django web framework"
 authors = [
     "Kevin Bowen <kevin.bowen@gmail.com>",
