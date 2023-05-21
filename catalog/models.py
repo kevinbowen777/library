@@ -17,9 +17,7 @@ class Genre(models.Model):
 
 
 class Language(models.Model):
-    name = models.CharField(
-        max_length=200, help_text="Enter the book's language"
-    )
+    name = models.CharField(max_length=200, help_text="Enter the book's language")
 
     class Meta:
         ordering = ["name"]
@@ -31,13 +29,9 @@ class Language(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey("Author", on_delete=models.SET_NULL, null=True)
-    pages = models.IntegerField(
-        null=True, blank=True, help_text="Number of Pages"
-    )
+    pages = models.IntegerField(null=True, blank=True, help_text="Number of Pages")
     publisher = models.CharField(max_length=40, blank=True)
-    pubdate = models.DateField(
-        null=True, blank=True, help_text="Date Published"
-    )
+    pubdate = models.DateField(null=True, blank=True, help_text="Date Published")
     summary = models.TextField(
         max_length=1000, help_text="Enter a brief description of the book."
     )
@@ -47,28 +41,24 @@ class Book(models.Model):
         unique=True,
         help_text="13 Character <a href='https://www.isbn-international.org/content/what-isbn'>ISBN number</a>",  # noqa:E501,B950
     )
-    genre = models.ManyToManyField(
-        Genre, help_text="Select a genre for this book"
-    )
-    language = models.ForeignKey(
-        "Language", on_delete=models.SET_NULL, null=True
-    )
+    genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
+    language = models.ForeignKey("Language", on_delete=models.SET_NULL, null=True)
     cover = models.ImageField(upload_to="covers/", blank=True)
 
     class Meta:
         ordering = ["title", "author"]
-
-    def display_genre(self):
-        """Creates a string for Genre. Required for Admin display"""
-        return ", ".join([genre.name for genre in self.genre.all()[:3]])
-
-    display_genre.short_description = "Genre"
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse("book-detail", args=[str(self.id)])
+
+    def display_genre(self):
+        """Creates a string for Genre. Required for Admin display"""
+        return ", ".join([genre.name for genre in self.genre.all()[:3]])
+
+    display_genre.short_description = "Genre"
 
 
 class BookInstance(models.Model):
@@ -85,12 +75,6 @@ class BookInstance(models.Model):
     borrower = models.ForeignKey(
         get_user_model(), on_delete=models.SET_NULL, null=True, blank=True
     )
-
-    @property
-    def is_overdue(self):
-        if self.due_back and date.today() > self.due_back:
-            return True
-        return False
 
     LOAN_STATUS = (
         ("m", "Maintenance"),
@@ -114,11 +98,17 @@ class BookInstance(models.Model):
     def __str__(self):
         return "{0} ({1})".format(self.id, self.book.title)
 
+    @property
+    def is_overdue(self):
+        if self.due_back and date.today() > self.due_back:
+            return True
+        return False
+
 
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(
-        max_length=100, null=True, blank=True, help_text="Middle Name(initial)"
+        max_length=100, blank=True, help_text="Middle Name(initial)"
     )
     last_name = models.CharField(max_length=100)
     date_of_birth = models.DateField(null=True, blank=True)
@@ -127,11 +117,11 @@ class Author(models.Model):
     class Meta:
         ordering = ["last_name", "first_name"]
 
-    def get_absolute_url(self):
-        return reverse("author-detail", args=[str(self.id)])
-
     def __str__(self):
         if self.middle_name is not None:
             return f"{self.last_name}, {self.first_name} {self.middle_name}"
         else:
             return f"{self.last_name}, {self.first_name}"
+
+    def get_absolute_url(self):
+        return reverse("author-detail", args=[str(self.id)])
