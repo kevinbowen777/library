@@ -74,7 +74,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "4.2.2"
+Django = "4.2.3"
 
 environs = { version = "^9.5.0", extras = ["django"] }
 django-crispy-forms = "^2.0"
