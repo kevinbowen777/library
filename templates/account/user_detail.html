@@ -18,12 +18,19 @@
       {% endif %}
       {% if user.country %}
         <p><strong>Country:</strong> {{ user.country.name }}
-        <img src="{{ user.country.flag }}" />
+        <img src="{{ user.country.flag }}"
+             alt="{{ user.country.name }}"
+             width="16"
+             height="12" />
         </p>
       {% endif %}
       {% if object.profile_pic %}
         <p>
-        <img class="profile_pic" src="{{ object.profile_pic.url }}" alt="{{ object.name }}">
+        <img class="profile_pic"
+             src="{{ object.profile_pic.url }}"
+             alt="{{ object.name }}"
+             width="16"
+             height="12" />
         </p>
       {% endif %}
       {% if object.bio %}

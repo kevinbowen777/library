@@ -6,7 +6,7 @@ body {
 
 .lead {
   font-weight: 500;
-  font-color: ffffff;
+  color: ffffff;
 }
 
 .sidebar-nav {
@@ -24,4 +24,14 @@ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   /* padding: 0;  Remove padding */
   margin: 0; /* Remove margins */
+}
+
+.copyright {
+  color: white;
+  font-size: 70%;
+}
+
+.author {
+  margin-left:20px;
+  margin-top:20px;
 }
