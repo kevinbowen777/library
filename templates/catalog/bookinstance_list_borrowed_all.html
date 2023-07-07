@@ -1,26 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}All Borrowed Books{% endblock title %}
+{% block title %}
+  All Borrowed Books
+{% endblock title %}
 
 {% block content %}
-<div class="container">
-  <p>
-  <h2>All borrowed Books</h2>
-  {% if bookinstance_list %}
-  <ul>
-    {% for bookinst in bookinstance_list %}
-    <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
-      <a class="btn btn-outline-dark btn-sm mb-2" href="{% url 'book-detail' bookinst.book.pk
-          %}">{{bookinst.book.title}}</a> Due Date: ({{ bookinst.due_back }})
-      {% if user.is_staff %}- {{ bookinst.borrower }}{% endif %} {% if perms.catalog.can_mark_returned %}-
-      <a class="btn btn-outline-success btn-sm mb-2" href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a>
+  <div class="container">
+    <p>
+      <h2>All borrowed Books</h2>
+      {% if bookinstance_list %}
+        <ul>
+          {% for bookinst in bookinstance_list %}
+            <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
+              <a class="btn btn-outline-dark btn-sm mb-2"
+                 href="{% url 'book-detail' bookinst.book.pk %}">{{ bookinst.book.title }}</a> Due Date: ({{ bookinst.due_back }})
+              {% if user.is_staff %}- {{ bookinst.borrower }}{% endif %}
+ 
+              {% if perms.catalog.can_mark_returned %}
+                -
+                <a class="btn btn-outline-success btn-sm mb-2"
+                   href="{% url 'renew-book-librarian' bookinst.id %}">Renew</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>There are no books borrowed.</p>
       {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-    {% else %}
-      <p>There are no books borrowed.</p>
-    {% endif %}
-  </p>
-</div>
+    </p>
+  </div>
 {% endblock content %}

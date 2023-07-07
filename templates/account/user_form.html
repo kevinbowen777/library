@@ -4,19 +4,22 @@
 {% block title %}Update Profile: {{ user.username }}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <p>
-    <h2>{{ user.username }}</h2>
-    <form class="form-horizontal col-md-6" method="post" enctype="multipart/form-data" action="{% url 'user_update' %}">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn btn-primary">Update</button>
-          <a class="btn btn-info" href="#" onclick="window.history.back()">Cancel</a>
+  <div class="container">
+    <p>
+      <h2>{{ user.username }}</h2>
+      <form class="form-horizontal col-md-6"
+            method="post"
+            enctype="multipart/form-data"
+            action="{% url 'user_update' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a class="btn btn-info" href="#" onclick="window.history.back()">Cancel</a>
+          </div>
         </div>
-      </div>
-    </form>
-  </p>
-</div>
+      </form>
+    </p>
+  </div>
 {% endblock %}
