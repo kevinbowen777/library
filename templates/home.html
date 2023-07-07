@@ -1,47 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}
+  Home
+{% endblock title %}
 
 {% block content %}
-{% block page_header %}
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to the local library</h1>
+  {% block page_header %}
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the local library</h1>
 
-    <p class="lead">Browse our modest selection of books, and keep a list of the
+      <p class="lead">
+        Browse our modest selection of books, and keep a list of the
         books you're reading. Track your borrowing. Find what you want with
-        search. Read our summaries of the titles in our catalog.</p>
+        search. Read our summaries of the titles in our catalog.
+      </p>
 
-    <p>
-    <img class="bookcover"
-         src="{% static 'images/tdd_with_python.jpg' %}"
-         alt=""
-         height=""
-         width="" />
-    <img class="bookcover"
-         src="{% static 'images/dubliners_joyce.jpg' %}"
-         alt=""
-         height=""
-         width="" />
-    <img class="bookcover"
-          src="{% static 'images/dfp_vincent.png' %}"
-         alt=""
-         height=""
-         width="" />
-    <img class="bookcover"
-         src="{% static 'images/atoms_metaphors.jpg' %}"
-         alt=""
-         height=""
-         width="" />
-    <img class="bookcover"
-         src="{% static 'images/programming_python.jpg' %}"
-         alt=""
-         height=""
-         width="" />
-    </p>
+      <p>
+        <img class="bookcover"
+             src="{% static 'images/tdd_with_python.jpg' %}"
+             alt=""
+             height=""
+             width="" />
+        <img class="bookcover"
+             src="{% static 'images/dubliners_joyce.jpg' %}"
+             alt=""
+             height=""
+             width="" />
+        <img class="bookcover"
+             src="{% static 'images/dfp_vincent.png' %}"
+             alt=""
+             height=""
+             width="" />
+        <img class="bookcover"
+             src="{% static 'images/atoms_metaphors.jpg' %}"
+             alt=""
+             height=""
+             width="" />
+        <img class="bookcover"
+             src="{% static 'images/programming_python.jpg' %}"
+             alt=""
+             height=""
+             width="" />
+      </p>
 
-    <a class="btn btn-lg btn-primary" href="{% url 'account_signup' %}"
-        role="button">Register »</a>
-  </div>
-{% endblock page_header %}
+      <a class="btn btn-lg btn-primary"
+         href="{% url 'account_signup' %}"
+         role="button">Register »</a>
+    </div>
+  {% endblock page_header %}
 {% endblock content %}

@@ -1,28 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Catalog{% endblock title %}
+{% block title %}
+  Catalog
+{% endblock title %}
 
 {% block content %}
-<div class="container">
-  <p>
-  <h2>Local Library Home</h2>
-  <p>Welcome to the Local Library, a website developed by <em>Kevin Bowen</em>!</p>
-  <h3>Catalog contents</h3>
-  <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
-  </ul>
-  <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
-  <p>
-    <h3>Search our catalog:</h3>
-    <form class="form-inline mt-2 mt-md-0" action="{% url 'search-results' %}" method="get">
-      <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-    </form>
-  </p>
-  </p>
-</div>
+  <div class="container">
+    <p>
+      <h2>Local Library Home</h2>
+      <p>
+        Welcome to the Local Library, a website developed by <em>Kevin Bowen</em>!
+      </p>
+      <h3>Catalog contents</h3>
+      <p>The library has the following record counts:</p>
+      <ul>
+        <li>
+          <strong>Books:</strong> {{ num_books }}
+        </li>
+        <li>
+          <strong>Copies:</strong> {{ num_instances }}
+        </li>
+        <li>
+          <strong>Copies available:</strong> {{ num_instances_available }}
+        </li>
+        <li>
+          <strong>Authors:</strong> {{ num_authors }}
+        </li>
+      </ul>
+      <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+      <p>
+        <h3>Search our catalog:</h3>
+        <form class="form-inline mt-2 mt-md-0"
+              action="{% url 'search-results' %}"
+              method="get">
+          <input name="q"
+                 class="form-control mr-sm-2"
+                 type="text"
+                 placeholder="Search"
+                 aria-label="Search">
+        </form>
+      </p>
+    </p>
+  </div>
 {% endblock content %}
