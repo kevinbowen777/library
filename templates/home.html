@@ -8,7 +8,7 @@
 {% block content %}
   {% block page_header %}
     <div class="jumbotron">
-      <h1 class="display-4">Welcome to the local library</h1>
+      <h1 class="display-5">Welcome to the local library</h1>
 
       <p class="lead">
         Browse our modest selection of books, and keep a list of the
@@ -16,37 +16,52 @@
         search. Read our summaries of the titles in our catalog.
       </p>
 
-      <p>
-        <img class="bookcover"
-             src="{% static 'images/tdd_with_python.jpg' %}"
-             alt=""
-             height=""
-             width="" />
-        <img class="bookcover"
-             src="{% static 'images/dubliners_joyce.jpg' %}"
-             alt=""
-             height=""
-             width="" />
-        <img class="bookcover"
-             src="{% static 'images/dfp_vincent.png' %}"
-             alt=""
-             height=""
-             width="" />
-        <img class="bookcover"
-             src="{% static 'images/atoms_metaphors.jpg' %}"
-             alt=""
-             height=""
-             width="" />
-        <img class="bookcover"
-             src="{% static 'images/programming_python.jpg' %}"
-             alt=""
-             height=""
-             width="" />
-      </p>
+      <div id="demo" class="carousel slide" data-ride="carousel">
 
-      <a class="btn btn-lg btn-primary"
-         href="{% url 'account_signup' %}"
-         role="button">Register »</a>
+        <p>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/tdd_with_python.jpg' %}"
+                   class="bookcover d-block mx-auto"
+                   alt="Los Angeles"
+                   width=""
+                   height="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/dubliners_joyce.jpg' %}"
+                   class="bookcover d-block mx-auto"
+                   alt="Chicago"
+                   width=""
+                   height="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/dfp_vincent.png' %}"
+                   class="bookcover d-block mx-auto"
+                   alt="New York"
+                   width=""
+                   height="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/atoms_metaphors.jpg' %}"
+                   class="bookcover d-block mx-auto"
+                   alt="New York"
+                   width=""
+                   height="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/programming_python.jpg' %}"
+                   class="bookcover d-block mx-auto"
+                   alt="New York"
+                   width=""
+                   height="">
+            </div>
+          </div>
+        </p>
+
+        <a class="btn btn-lg btn-primary"
+           href="{% url 'account_signup' %}"
+           role="button">Register »</a>
+      </div>
     </div>
   {% endblock page_header %}
 {% endblock content %}
