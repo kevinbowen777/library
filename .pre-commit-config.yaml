@@ -15,6 +15,7 @@ repos:
       - id: check-json
       - id: check-merge-conflict
       - id: check-toml
+        exclude: poetry\.lock
       - id: check-yaml
       - id: debug-statements
       # - id: detect-aws-credentials
@@ -42,7 +43,9 @@ repos:
     rev: v1.31.1
     hooks:
     - id: djlint-reformat-django
+      exclude: "htmlcov"
     - id: djlint-django
+      exclude: "htmlcov"
   
   - repo: https://github.com/python-poetry/poetry
     rev: 1.5.0

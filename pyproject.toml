@@ -112,6 +112,7 @@ omit = [
 show_missing = true
 
 [tool.djlint]
+exclude="htmlcov"
 files=["templates/"]
 indent=2
 max_line_length=120
