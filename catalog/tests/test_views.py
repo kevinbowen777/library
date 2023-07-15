@@ -3,10 +3,11 @@ import datetime
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
 from django.test import TestCase
-from django.urls import reverse
+from django.urls import resolve, reverse
 from django.utils import timezone
 
 from ..models import Author, Book, BookInstance, Genre, Language
+from ..views import index
 
 
 class AuthorListViewTest(TestCase):
@@ -64,9 +65,7 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
         test_user2.save()
 
         # Create a book
-        test_author = Author.objects.create(
-            first_name="John", last_name="Smith"
-        )
+        test_author = Author.objects.create(first_name="John", last_name="Smith")
         test_genre = Genre.objects.create(name="Fantasy")  # noqa:F841
         test_language = Language.objects.create(name="English")
         test_book = Book.objects.create(
@@ -84,9 +83,7 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
         # Create 30 BookInstance objects
         number_of_book_copies = 30
         for book_copy in range(number_of_book_copies):
-            return_date = timezone.now() + datetime.timedelta(
-                days=book_copy % 5
-            )
+            return_date = timezone.now() + datetime.timedelta(days=book_copy % 5)
             if book_copy % 2:
                 the_borrower = test_user1
             else:
@@ -102,9 +99,7 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
 
     def test_redirect_if_not_logged_in(self):
         response = self.client.get(reverse("my-borrowed"))
-        self.assertRedirects(
-            response, "/accounts/login/?next=/catalog/mybooks/"
-        )
+        self.assertRedirects(response, "/accounts/login/?next=/catalog/mybooks/")
 
     def test_logged_in_uses_correct_template(self):
         login = self.client.login(  # noqa:F841
@@ -159,7 +154,6 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
             self.assertEqual(bookitem.status, "o")
 
     def test_pages_paginated_to_ten(self):
-
         # Change all books to be on loan.
         # This should make 15 test user ones.
         for copy in BookInstance.objects.all():
@@ -181,7 +175,6 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
         self.assertEqual(len(response.context["bookinstance_list"]), 10)
 
     def test_pages_ordered_by_due_date(self):
-
         # Change all books to be on loan
         for copy in BookInstance.objects.all():
             copy.status = "o"
@@ -225,9 +218,7 @@ class RenewBookInstancesViewTest(TestCase):
         test_user2.save()
 
         # Create a book
-        test_author = Author.objects.create(
-            first_name="John", last_name="Smith"
-        )
+        test_author = Author.objects.create(first_name="John", last_name="Smith")
         test_genre = Genre.objects.create(name="Fantasy")  # noqa:F841
         test_language = Language.objects.create(name="English")
         test_book = Book.objects.create(
@@ -343,9 +334,7 @@ class RenewBookInstancesViewTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
 
-        date_3_weeks_in_future = datetime.date.today() + datetime.timedelta(
-            weeks=3
-        )
+        date_3_weeks_in_future = datetime.date.today() + datetime.timedelta(weeks=3)
         self.assertEqual(
             response.context["form"].initial["renewal_date"],
             date_3_weeks_in_future,
@@ -374,9 +363,7 @@ class RenewBookInstancesViewTest(TestCase):
             username="testuser2", password="2HJ1vRV0Z&3iD"
         )
 
-        invalid_date_in_future = datetime.date.today() + datetime.timedelta(
-            weeks=5
-        )
+        invalid_date_in_future = datetime.date.today() + datetime.timedelta(weeks=5)
         response = self.client.post(
             reverse(
                 "renew-book-librarian",
@@ -396,9 +383,7 @@ class RenewBookInstancesViewTest(TestCase):
         login = self.client.login(  # noqa:F841
             username="testuser2", password="2HJ1vRV0Z&3iD"
         )
-        valid_date_in_future = datetime.date.today() + datetime.timedelta(
-            weeks=2
-        )
+        valid_date_in_future = datetime.date.today() + datetime.timedelta(weeks=2)
         response = self.client.post(
             reverse(
                 "renew-book-librarian",
@@ -447,9 +432,7 @@ class AuthorCreateViewTest(TestCase):
 
     def test_redirect_if_not_logged_in(self):
         response = self.client.get(reverse("author-create"))
-        self.assertRedirects(
-            response, "/accounts/login/?next=/catalog/author/create/"
-        )
+        self.assertRedirects(response, "/accounts/login/?next=/catalog/author/create/")
 
     def test_forbidden_if_logged_in_but_not_correct_permission(self):
         login = self.client.login(  # noqa:F841
@@ -482,9 +465,7 @@ class AuthorCreateViewTest(TestCase):
 
         expected_initial_date = datetime.date(1882, 2, 2)
         response_date = response.context["form"].initial["date_of_birth"]
-        response_date = datetime.datetime.strptime(
-            response_date, "%d/%m/%Y"
-        ).date()
+        response_date = datetime.datetime.strptime(response_date, "%d/%m/%Y").date()
         self.assertEqual(response_date, expected_initial_date)
 
     def test_redirects_to_detail_view_on_success(self):
@@ -498,3 +479,28 @@ class AuthorCreateViewTest(TestCase):
         # Manually check redirect because we don't know what author was created
         self.assertEqual(response.status_code, 302)
         self.assertTrue(response.url.startswith("/catalog/author/"))
+
+
+class IndexTests(TestCase):
+    def setUp(self):
+        url = reverse("index")
+        self.response = self.client.get(url)
+
+    def test_index_status_code(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_index_url_name(self):
+        self.assertEqual(self.response.status_code, 200)
+
+    def test_index_contains_correct_html(self):
+        self.assertContains(self.response, "Catalog contents")
+
+    def test_index_does_not_contain_incorrect_html(self):
+        self.assertNotContains(self.response, "About Page")
+
+    def test_index_template(self):
+        self.assertTemplateUsed(self.response, "index.html")
+
+    def test_index_page_url_resolves_index(self):
+        view = resolve("/catalog/")
+        self.assertEqual(view.func.__name__, index.__name__)
