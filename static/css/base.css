@@ -16,8 +16,8 @@ body {
 }
 
 .bookcover {
-  height: 200px;
-  width: auto;
+  height: 500px;
+  width: 350px;
 }
 
 ul.no-bullets {
@@ -34,4 +34,10 @@ ul.no-bullets {
 .author {
   margin-left:20px;
   margin-top:20px;
+}
+
+.jumbotron {
+  margin-top: 25px;
+  margin-right: 40px;
+  padding: 30px;
 }
