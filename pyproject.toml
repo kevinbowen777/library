@@ -89,26 +89,37 @@ exclude = '''
 )/
 '''
 
-[tool.coverage.paths]
-source = ["accounts", "catalog", "config", "pages"]
-
 [tool.coverage.run]
 branch = true
-source = ["config"]
+dynamic_context = "test_function"
+source = ["accounts", "catalog", "config", "pages"]
 omit = [
-    "*conftest.py",
-    "*manage.py",
-    "*settings*.py",
+    "conftest.py",
+    "manage.py",
+    "settings.py",
     "*test.py",
-    "*wsgi.py",
+    "asgi.py",
+    "gunicorn.py",
+    "wsgi.py",
     "*/__init__.py",
     "*/migrations/*",
     "*/factories.py",
     "*/tests/*",
 ]
+plugins = [
+    "django_coverage_plugin",
+]
+
+[tool.coverage.django_coverage_plugin]
+template_extensions = "html"
 
 [tool.coverage.report]
 show_missing = true
+precision = 2
+
+[tool.coverage.html]
+show_contexts = true
+title = "library coverage report"
 
 [tool.djlint]
 exclude="htmlcov"
