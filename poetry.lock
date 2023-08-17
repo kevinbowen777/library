@@ -691,20 +691,6 @@ files = [
 Django = ">=3.2"
 
 [[package]]
-name = "django-test-plus"
-version = "2.2.3"
-description = "\"django-test-plus provides useful additions to Django's default TestCase\""
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "django-test-plus-2.2.3.tar.gz", hash = "sha256:72e1ca5dcaaf4ad73c9c796ad6e0dc165db39f706c3ad822074d961f72eed743"},
-    {file = "django_test_plus-2.2.3-py3-none-any.whl", hash = "sha256:5a8e26c9bf8eab092012c2cce9c605e0dba5a15879771feeb992c424504a18fe"},
-]
-
-[package.extras]
-test = ["factory-boy", "flake8", "pyflakes", "pytest", "pytest-cov", "pytest-django", "pytest-pythonpath"]
-
-[[package]]
 name = "django-types"
 version = "0.17.0"
 description = "Type stubs for Django"
@@ -2530,4 +2516,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4a17d6247dcf594446b0fb3ff474da40d672470e3ba269d26d855e5ff922a93c"
+content-hash = "2462e2d4e359b32859a92c08e3fec2986cf8c9fcad56c498912d9a077275121f"
