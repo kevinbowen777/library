@@ -11,9 +11,9 @@ license = "MIT"
 
 readme = "README.md"
 
-homepage = ""
+homepage = "https://github.com/kevinbowen777/library.git"
 repository = "https://github.com/kevinbowen777/library.git"
-documentation = "file: README.rst"
+documentation = "file:///docs/README.rst"
 
 keywords = ["django", "web-application", "library"]
 
@@ -48,7 +48,7 @@ psycopg2-binary = "^2.9.5"
 django-countries = "^7.3.2"
 whitenoise = "^6.0.0"
 gunicorn = "^21.0"
-crispy-bootstrap4 = "^2022.1"
+crispy-bootstrap4 = "^2023.1"
 django-types = "^0.19.0"
 
 [tool.poetry.group.dev.dependencies]
