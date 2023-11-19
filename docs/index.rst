@@ -34,12 +34,12 @@ Features
    * `Debug-toolbar <https://pypi.org/project/django-debug-toolbar/>`_ available. See notes in `config/settings.py` for enabling.
    * Examples of using `Factories <https://pypi.org/project/factory-boy/>`_ & `pytest <https://pypi.org/project/pytest/>`_ fixtures in account app testing
    * `shell_plus <https://django-extensions.readthedocs.io/en/latest/shell_plus.html>`_ with `IPython <https://pypi.org/project/ipython/>`_ via `django-extensions <https://pypi.python.org/pypi/django-extensions/>`_ package
-   * `Nox <https://pypi.org/project/nox/>`_ testing sessions for latest Python 3.9, 3.10, and 3.11, 3.12
+   * `Nox <https://pypi.org/project/nox/>`_ testing sessions for latest Python 3.10, and 3.11, 3.12
 
      * `black <https://pypi.org/project/black/>`_
      * `Sphinx <https://pypi.org/project/Sphinx/>`_ documentaion generation
      * linting
-       
+
        * `flake8 <https://pypi.org/project/flake8/>`_
        * `flake8-bandit <https://pypi.org/project/flake8-bandit/>`_
        * `flake8-bugbear <https://pypi.org/project/flake8-bugbear/>`_
