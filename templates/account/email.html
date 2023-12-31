@@ -12,9 +12,9 @@
     <p>
       <h2>{% trans "E-mail Addresses" %}</h2>
       {% if user.emailaddress_set.all %}
-        <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
+        <p>{% trans "The following e-mail addresses are associated with your account:" %}</p>
 
-        <form action="{% url 'account_email' %}"
+        <form action="{% url "account_email" %}"
               class="col-md-8 email_list"
               method="post">
           {% csrf_token %}
@@ -47,13 +47,13 @@
             <div class="buttonHolder">
               <button class="btn btn-success secondaryAction"
                       type="submit"
-                      name="action_primary">{% trans 'Make Primary' %}</button>
+                      name="action_primary">{% trans "Make Primary" %}</button>
               <button class="btn btn-info secondaryAction" type="submit" name="action_send">
-                {% trans 'Re-send Verification' %}
+                {% trans "Re-send Verification" %}
               </button>
               <button class="btn btn-danger primaryAction"
                       type="submit"
-                      name="action_remove">{% trans 'Remove' %}</button>
+                      name="action_remove">{% trans "Remove" %}</button>
             </div>
 
           </fieldset>
@@ -61,7 +61,7 @@
 
       {% else %}
         <p>
-          <strong>{% trans 'Warning:' %}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
+          <strong>{% trans "Warning:" %}</strong> {% trans "You currently do not have any e-mail address set up. You should really add an e-mail address so you can receive notifications, reset your password, etc." %}
         </p>
 
       {% endif %}
@@ -71,7 +71,7 @@
           <h3>{% trans "Add E-mail Address" %}</h3>
 
           <form method="post"
-                action="{% url 'account_email' %}"
+                action="{% url "account_email" %}"
                 class="col-md-4 add_email">
             {% csrf_token %}
             {{ form|crispy }}
@@ -87,8 +87,8 @@
 {% block extra_body %}
   <script type="text/javascript">
 (function() {
-  var message = "{% trans 'Do you really want to remove the selected e-mail address?' %}";
-  var actions = document.getElementsByName('action_remove');
+  var message = "{% trans "Do you really want to remove the selected e-mail address?" %}";
+  var actions = document.getElementsByName("action_remove");
   if (actions.length) {
     actions[0].addEventListener("click", function(e) {
       if (! confirm(message)) {

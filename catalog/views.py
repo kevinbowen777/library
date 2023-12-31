@@ -24,9 +24,7 @@ from .models import Author, Book, BookInstance
 def index(request):
     num_books = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()
-    num_instances_available = BookInstance.objects.filter(
-        status__exact="a"
-    ).count()
+    num_instances_available = BookInstance.objects.filter(status__exact="a").count()
     num_authors = Author.objects.count()
     num_visits = request.session.get("num_visits", 0)
     request.session["num_visits"] = num_visits + 1
@@ -87,9 +85,7 @@ class LoanedBooksAllListView(PermissionRequiredMixin, ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        return BookInstance.objects.filter(status__exact="o").order_by(
-            "due_back"
-        )
+        return BookInstance.objects.filter(status__exact="o").order_by("due_back")
 
 
 @login_required
@@ -100,7 +96,6 @@ def renew_book_librarian(request, pk):
 
     # If this is a POST request then process the Form data
     if request.method == "POST":
-
         # Create a form instance and populate it with data
         # from the request (binding):
         form = RenewBookForm(request.POST)
@@ -117,9 +112,7 @@ def renew_book_librarian(request, pk):
 
     # If this is a GET (or any other method) create the default form
     else:
-        proposed_renewal_date = datetime.date.today() + datetime.timedelta(
-            weeks=3
-        )
+        proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
         form = RenewBookForm(initial={"renewal_date": proposed_renewal_date})
 
     context = {

@@ -54,7 +54,7 @@ django-countries
  * Documentation:
  * Tutorial:
  * Repository: https://github.com/SmileyChris/django-countries
- * PyPI package: https://pypi.python.org/pypi/django-countries 
+ * PyPI package: https://pypi.python.org/pypi/django-countries
  * Notes:
 
 local management of environment variables with
@@ -189,7 +189,7 @@ flake8-bandit
 flake8-bugbear
 --------------
 
-* Documentation: 
+* Documentation:
 * Tutorial:
 * Repository: https://github.com/PyCQA/flake8-bugbear
 * PyPI package: https://pypi.org/project/flake8-bugbear/

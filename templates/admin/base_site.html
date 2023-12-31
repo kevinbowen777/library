@@ -3,7 +3,7 @@
 {% block title %}
   {% if subtitle %}{{ subtitle }} |{% endif %}
   {{ title }} | {{ site_title|default:_("Django site admin") }}
-{% endblock %}
+{% endblock title %}
 
 {% block branding %}
   <h1 id="site-name">
@@ -11,4 +11,5 @@
   </h1>
 {% endblock branding %}
 
-{% block nav-global %}{% endblock %}
+{% block nav-global %}
+{% endblock nav-global %}
