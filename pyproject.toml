@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "library"
-version = "0.2.0"
+version = "0.3.0"
 description = "A lending library built using the Django web framework"
 authors = [
     "Kevin Bowen <kevin.bowen@gmail.com>",
@@ -18,7 +18,7 @@ documentation = "file:///docs/index.rst"
 keywords = ["django", "web-application", "library"]
 
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 4 - Beta",
     "Environment :: Web Environment",
     "Framework :: Django",
     "Framework :: Django :: 5.0",
@@ -38,7 +38,7 @@ classifiers = [
 python = "^3.10"
 Django = "5.0"
 
-environs = { version = "^9.5.0", extras = ["django"] }
+environs = { version = "^10.0", extras = ["django"] }
 django-crispy-forms = "^2.0"
 django-extensions = "^3.1.5"
 django-allauth = ">=0.54.0, < 0.60.0"
