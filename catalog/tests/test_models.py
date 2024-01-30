@@ -96,7 +96,7 @@ class AuthorModelTest(TestCase):
         if self.author.middle_name is not None:
             self.assertEqual(
                 self.author.__str__(),
-                f"{self.author.last_name}, {self.author.first_name} {self.author.middle_name}",  # noqa:B950
+                f"{self.author.last_name}, {self.author.first_name} {self.author.middle_name}",
             )
         else:
             self.assertEqual(

@@ -9,7 +9,7 @@ pytestmark = pytest.mark.django_db
 def test_detail(user: CustomUser):
     assert (
         reverse("user_detail", kwargs={"username": user.username})
-        == f"/accounts/{user.username}/"  # noqa:W503
+        == f"/accounts/{user.username}/"
     )
     assert resolve(f"/accounts/{user.username}/").view_name == "user_detail"
 
