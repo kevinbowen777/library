@@ -38,10 +38,10 @@ classifiers = [
 python = "^3.10"
 Django = "5.0.1"
 
-environs = { version = "^10.0", extras = ["django"] }
+django-allauth = ">=0.60, < 0.61"
+environs = { version = "^10", extras = ["django"] }
 django-crispy-forms = "^2.0"
 django-extensions = "^3.1.5"
-django-allauth = ">=0.54.0, < 0.60.0"
 Pillow = "^10.0"
 psycopg2-binary = "^2.9.5"
 django-countries = "^7.3.2"
@@ -51,7 +51,7 @@ crispy-bootstrap4 = "^2023.1"
 django-types = "^0.19.0"
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.0.0"
+black = "^24.0.0"
 pre-commit = "^3.0.0"
 coverage = { version = "^7.0.0", extras = ["toml"] }
 pytest-cov = "^4.0.0"
@@ -63,7 +63,7 @@ ipython = "^8.4.0"
 friendly = "^0.7.0"
 colorama = "^0.4.4"
 nox = "^2023.4.22"
-safety = "2.4.0b2"
+safety = "^3.0"
 factory-boy = "^3.2.0"
 django-coverage-plugin = "^3.0.0"
 ruff = "^0.1.0"
@@ -71,7 +71,7 @@ werkzeug = "^3.0"
 pyopenssl = "^23.2.0"
 djlint = "^1.31.1"
 sphinx = ">= 7.2.5, < 7.3.0"
-furo = "^2023.7.26"
+furo = "^2024.0"
 sphinx-lint = "^0.9.1"
 
 [tool.black]
