@@ -2,8 +2,10 @@
 
 from pathlib import Path
 
-# import socket  # Comment out if not using debug_toolbar
 from environs import Env
+
+# import socket  # Comment out if not using debug_toolbar
+
 
 env = Env()
 env.read_env()
@@ -17,7 +19,9 @@ DEBUG = env.bool("DJANGO_DEBUG", default=False)
 
 ALLOWED_HOSTS = ["library.cool", "localhost", "127.0.0.1"]
 
+
 # Application definition
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.admindocs",
@@ -80,7 +84,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-# Database
 # Note: Set sqlite/dev URI in .env file
 DATABASES = {
     "default": {
@@ -89,7 +92,7 @@ DATABASES = {
             "DATABASE_URL", default="postgres://postgres@db/postgres"
         ),
         "NAME": env.str("POSTGRES_DB", "postgres"),
-        "USER": env.str("POSTGRES_USER", default="fakeuser"),
+        "USER": env.str("POSTGRES_USER", "fakeuser"),
         "PASSWORD": env.str("POSTGRES_PASSWORD", "password"),
         "HOST": env.str("POSTGRES_HOST", "db"),
         "PORT": env.int("POSTGRES_PORT", "5432"),
@@ -129,11 +132,11 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 STATIC_ROOT = str(BASE_DIR.joinpath("staticfiles"))
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -248,7 +251,6 @@ LOGGING = {
 }
 
 # django-debug-toolbar
-
 # Note: disable when running Nox tests
 # Use the following in Docker only:
 # hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
