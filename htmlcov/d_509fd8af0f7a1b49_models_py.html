@@ -13,13 +13,11 @@
   "d": "catalog.tests.test_views.LoanedBookInstancesByUserListViewTest.test_only_borrowed_books_in_list",
   "e": "catalog.tests.test_views.LoanedBookInstancesByUserListViewTest.test_pages_ordered_by_due_date",
   "f": "catalog.tests.test_views.LoanedBookInstancesByUserListViewTest.test_pages_paginated_to_ten",
-  "g": "catalog.tests.test_views.RenewBookInstancesViewTest.test_form_invalid_renewal_date_future",
-  "h": "catalog.tests.test_views.RenewBookInstancesViewTest.test_form_invalid_renewal_date_past",
-  "i": "catalog.tests.test_views.RenewBookInstancesViewTest.test_form_renewal_date_initially_has_date_three_weeks_in_future",
-  "j": "catalog.tests.test_views.RenewBookInstancesViewTest.test_logged_in_with_permission_another_users_borrowed_book",
-  "k": "catalog.tests.test_views.RenewBookInstancesViewTest.test_logged_in_with_permission_borrowed_book",
-  "l": "catalog.tests.test_views.RenewBookInstancesViewTest.test_uses_correct_template",
-  "m": "accounts.tests.test_models.CustomUserTests.test_user_get_absolute_url"
+  "g": "catalog.tests.test_views.RenewBookInstancesViewTest.test_form_renewal_date_initially_has_date_three_weeks_in_future",
+  "h": "catalog.tests.test_views.RenewBookInstancesViewTest.test_logged_in_with_permission_another_users_borrowed_book",
+  "i": "catalog.tests.test_views.RenewBookInstancesViewTest.test_logged_in_with_permission_borrowed_book",
+  "j": "catalog.tests.test_views.RenewBookInstancesViewTest.test_uses_correct_template",
+  "k": "accounts.tests.test_models.CustomUserTests.test_user_get_absolute_url"
 }
     </script>
     <script type="text/javascript" src="coverage_html.js" defer></script>
@@ -83,8 +81,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="d_509fd8af0f7a1b49_urls_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.2.7">coverage.py v7.2.7</a>,
-            created at 2023-08-10 20:17 -0700
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.4.3">coverage.py v7.4.3</a>,
+            created at 2024-02-25 05:56 +0000
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"/>
@@ -99,7 +97,7 @@
     </div>
 </header>
 <main id="source">
-    <p class="run"><span class="n"><a id="t1" href="#t1">1</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">contrib</span><span class="op">.</span><span class="nam">auth</span><span class="op">.</span><span class="nam">models</span> <span class="key">import</span> <span class="nam">AbstractUser</span><span class="op">,</span> <span class="nam">Group</span>  <span class="com"># noqa: F401</span>&nbsp;</span><span class="r"><label for="ctxs1" class="ctx">(empty)</label></span></p>
+    <p class="run"><span class="n"><a id="t1" href="#t1">1</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">contrib</span><span class="op">.</span><span class="nam">auth</span><span class="op">.</span><span class="nam">models</span> <span class="key">import</span> <span class="nam">AbstractUser</span><span class="op">,</span> <span class="nam">Group</span>&nbsp;</span><span class="r"><label for="ctxs1" class="ctx">(empty)</label></span></p>
     <p class="run"><span class="n"><a id="t2" href="#t2">2</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">db</span> <span class="key">import</span> <span class="nam">models</span>&nbsp;</span><span class="r"><label for="ctxs2" class="ctx">(empty)</label></span></p>
     <p class="run"><span class="n"><a id="t3" href="#t3">3</a></span><span class="t"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">urls</span> <span class="key">import</span> <span class="nam">reverse</span>&nbsp;</span><span class="r"><label for="ctxs3" class="ctx">(empty)</label></span></p>
     <p class="run"><span class="n"><a id="t4" href="#t4">4</a></span><span class="t"><span class="key">from</span> <span class="nam">django_countries</span><span class="op">.</span><span class="nam">fields</span> <span class="key">import</span> <span class="nam">CountryField</span>&nbsp;</span><span class="r"><label for="ctxs4" class="ctx">(empty)</label></span></p>
@@ -121,7 +119,7 @@
     <p class="run"><span class="n"><a id="t20" href="#t20">20</a></span><span class="t">    <span class="nam">country</span> <span class="op">=</span> <span class="nam">CountryField</span><span class="op">(</span><span class="str">"Country"</span><span class="op">,</span> <span class="nam">blank</span><span class="op">=</span><span class="key">True</span><span class="op">)</span>&nbsp;</span><span class="r"><label for="ctxs20" class="ctx">(empty)</label></span></p>
     <p class="pln"><span class="n"><a id="t21" href="#t21">21</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t22" href="#t22">22</a></span><span class="t">    <span class="key">def</span> <span class="nam">__str__</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"><label for="ctxs22" class="ctx">(empty)</label></span></p>
-    <p class="run"><span class="n"><a id="t23" href="#t23">23</a></span><span class="t">        <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">username</span>&nbsp;</span><input type="checkbox" id="ctxs23" /><span class="r"><label for="ctxs23" class="ctx">11 ctx</label></span><span class="ctxs">1bcdefghijkl</span></p>
+    <p class="run"><span class="n"><a id="t23" href="#t23">23</a></span><span class="t">        <span class="key">return</span> <span class="nam">self</span><span class="op">.</span><span class="nam">username</span>&nbsp;</span><input type="checkbox" id="ctxs23" /><span class="r"><label for="ctxs23" class="ctx">9 ctx</label></span><span class="ctxs">1bcdefghij</span></p>
     <p class="pln"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">    <span class="key">def</span> <span class="nam">get_absolute_url</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"><label for="ctxs25" class="ctx">(empty)</label></span></p>
     <p class="pln"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">        <span class="str">"""Get URL for user's detail view.</span>&nbsp;</span><span class="r"></span></p>
@@ -130,7 +128,7 @@
     <p class="pln"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t"><span class="str">            str: URL for user detail.</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t"><span class="str">        """</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">        <span class="key">return</span> <span class="nam">reverse</span><span class="op">(</span><span class="str">"user_detail"</span><span class="op">,</span> <span class="nam">kwargs</span><span class="op">=</span><span class="op">{</span><span class="str">"username"</span><span class="op">:</span> <span class="nam">self</span><span class="op">.</span><span class="nam">username</span><span class="op">}</span><span class="op">)</span>&nbsp;</span><input type="checkbox" id="ctxs32" /><span class="r"><label for="ctxs32" class="ctx">1 ctx</label></span><span class="ctxs">1m</span></p>
+    <p class="run"><span class="n"><a id="t32" href="#t32">32</a></span><span class="t">        <span class="key">return</span> <span class="nam">reverse</span><span class="op">(</span><span class="str">"user_detail"</span><span class="op">,</span> <span class="nam">kwargs</span><span class="op">=</span><span class="op">{</span><span class="str">"username"</span><span class="op">:</span> <span class="nam">self</span><span class="op">.</span><span class="nam">username</span><span class="op">}</span><span class="op">)</span>&nbsp;</span><input type="checkbox" id="ctxs32" /><span class="r"><label for="ctxs32" class="ctx">1 ctx</label></span><span class="ctxs">1k</span></p>
 </main>
 <footer>
     <div class="content">
@@ -139,8 +137,8 @@
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
             <a id="nextFileLink" class="nav" href="d_509fd8af0f7a1b49_urls_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
-            <a class="nav" href="https://coverage.readthedocs.io/en/7.2.7">coverage.py v7.2.7</a>,
-            created at 2023-08-10 20:17 -0700
+            <a class="nav" href="https://coverage.readthedocs.io/en/7.4.3">coverage.py v7.4.3</a>,
+            created at 2024-02-25 05:56 +0000
         </p>
     </div>
 </footer>
