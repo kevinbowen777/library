@@ -141,15 +141,6 @@ factory-boy
 * PyPI package: https://pypi.org/project/factory-boy/
 * Notes:
 
-black
------
-
-* Documentation: https://black.readthedocs.io/en/stable
-* Tutorial:
-* Repository: https://github.com/psf/black
-* PyPI package: https://pypi.org/project/black/
-* Notes:
-
 Sphinx
 ------
 

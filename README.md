@@ -37,7 +37,7 @@
      - Examples of using [Factories](https://pypi.org/project/factory-boy/) & [pytest](https://pypi.org/project/pytest/) fixtures in account app testing
      - [shell_plus](https://django-extensions.readthedocs.io/en/latest/shell_plus.html) with [IPython](https://pypi.org/project/ipython/) via [django-extensions](https://pypi.python.org/pypi/django-extensions/) package
      - [Nox](https://pypi.org/project/nox/) testing sessions for latest Python 3.10, 3.11, and 3.12
-         - [black](https://pypi.org/project/black/) (`nox -s black`)
+         - [Coverage](https://pypi.org/project/coverage/) report generation (`nox -s coverage`)
          - [Sphinx](https://pypi.org/project/Sphinx/) documentaion generation (`nox -s lint`)
          - linting (`nox -s lint`)
              - [ruff](https://pypi.org/project/ruff/)
@@ -94,11 +94,11 @@ able to run `run` instead of `./run`.*
 ### Testing
  - `docker compose exec web python manage.py test`
  - `coverage run -m pytest`
- - Nox (includes sessions for black, lint, pyright(typing), safety, tests)
+ - Nox (includes sessions for coverage, lint, pyright(typing), safety, tests)
      - testing supported for Python 3.10, 3.11
      - e.g. `nox`, `nox -rs lint-3.11`, `nox -s tests`
        - `nox`
-       - `nox -s black-3.12`
+       - `nox -s coverage-3.12`
        - `nox -s docs-3.11`
        - `nox -rs lint-3.10` (Use the 'r' flag to reuse existing session)
        - `nox -s pyright-3.11`
