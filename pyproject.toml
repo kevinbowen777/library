@@ -15,7 +15,11 @@ homepage = "https://github.com/kevinbowen777/library.git"
 repository = "https://github.com/kevinbowen777/library.git"
 documentation = "file:///docs/index.rst"
 
-keywords = ["django", "web-application", "library"]
+keywords = [
+    "django",
+    "web-application",
+    "library",
+]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -36,7 +40,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-Django = "5.0.2"
+Django = "5.0.3"
 
 django-allauth = ">=0.60.0, < 0.70"
 environs = { version = "^10", extras = ["django"] }
@@ -77,7 +81,12 @@ django-types = "^0.19.0"
 [tool.coverage.run]
 branch = true
 dynamic_context = "test_function"
-source = ["accounts", "catalog", "config", "pages"]
+source = [
+    "accounts",
+    "catalog",
+    "config",
+    "pages",
+]
 omit = [
     "conftest.py",
     "manage.py",
@@ -115,7 +124,12 @@ preserve_blank_lines = true
 
 [tool.pyright]
 # See: https://github.com/microsoft/pyright/blob/main/docs/configuration.md
-include = ["accounts", "catalog", "config", "pages",]
+include = [
+    "config",
+    "accounts",
+    "catalog",
+    "pages",
+]
 exclude = [
     "**/tests",
     "**/__pycache__",
