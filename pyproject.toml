@@ -59,7 +59,7 @@ pre-commit = "^3.0.0"
 ruff = ">=0.1.0, <=0.3.9"
 nox = "2024.3.2"
 pytest = "^8.0"
-pytest-cov = "^4.0.0"
+pytest-cov = ">=5.0, <6.0"
 pytest-django = "^4.5.2"
 pytest-sugar = "^1.0"
 coverage = { version = "^7.0.0", extras = ["toml"] }
@@ -75,7 +75,7 @@ werkzeug = "^3.0"
 pyopenssl = ">=24.0, < 25.0"
 sphinx = ">= 7.2.5, < 7.3.0"
 furo = "^2024.0"
-tblib = "^1.7.0"
+tblib = "^3.0"
 django-types = "^0.19.0"
 
 [tool.coverage.run]
