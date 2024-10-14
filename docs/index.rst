@@ -34,7 +34,7 @@ Features
    * `Debug-toolbar <https://pypi.org/project/django-debug-toolbar/>`_ available. See notes in `config/settings.py` for enabling.
    * Examples of using `Factories <https://pypi.org/project/factory-boy/>`_ & `pytest <https://pypi.org/project/pytest/>`_ fixtures in account app testing
    * `shell_plus <https://django-extensions.readthedocs.io/en/latest/shell_plus.html>`_ with `IPython <https://pypi.org/project/ipython/>`_ via `django-extensions <https://pypi.python.org/pypi/django-extensions/>`_ package
-   * `Nox <https://pypi.org/project/nox/>`_ testing sessions for latest Python 3.10, and 3.11, 3.12
+   * `Nox <https://pypi.org/project/nox/>`_ testing sessions for latest Python 3.10, 3.11, 3.12, 3.13
 
      * `Sphinx <https://pypi.org/project/Sphinx/>`_ documentaion generation
      * linting
@@ -116,8 +116,8 @@ Testing
    $ nox --list-sessions
    $ nox
    $ nox -s coverage-3.12
-   $ nox -s docs-3.11
-   $ nox -rs lint-3.9  (Use the 'r' flag to reuse existing session)
+   $ nox -s docs-3.13
+   $ nox -rs lint-3.10  (Use the 'r' flag to reuse existing session)
    $ nox -s safety  (will run tests against all Python versions)
    $ nox -s tests
 
