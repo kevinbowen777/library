@@ -1,133 +1,65 @@
-library
-=======
+Library
+=========
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
+The library_ application is built using the Django 5.1.x web application framework and is part of the collection of `Web Framework Projects`_ .
 
-   license
-   package_index
+.. _bookstore: https://github.com/kevinbowen777/library
+.. _Web Framework Projects: https://github.com/kevinbowen777/web-project-index
 
-.. contents:: Table of Contents
-   :local:
-   :backlinks: top
-   :depth: 2
+Getting Started
+---------------
 
-A lending library built using the Django 5.0.x web framework
+:doc:`features`
+    Outline of the project's basic functionality.
 
-Features
---------
+:doc:`configuring`
+    Project configuration and customization options.
 
- * Application
+:doc:`installing`
+    How to install the project directly on your local machine, or in a Docker
+    container.
 
-   * Add, update, and delete authors and books
-   * Borrow, renew, and return books
-   * image carousel
-   * User registration with email verification & social(GitHub) login using `django-allauth <https://pypi.org/project/django-allauth/>`_
-   * `Bootstrap4 <https://pypi.org/project/django-bootstrap4/>`_ & `crispy-forms <https://pypi.org/project/django-crispy-forms/>`_ decorations
-   * Customizable user profile pages with bio, profile pic, & `country flags <https://pypi.python.org/pypi/django-countries>`_
-   * For links to additional package resources used in this repository, see the :doc:`Package Index <package_index>`
- * Dev/testing
-
-   * Basic module testing templates
-   * `Coverage <https://kevinbowen777.github.io/library/>`_ reports on web
-   * `Debug-toolbar <https://pypi.org/project/django-debug-toolbar/>`_ available. See notes in `config/settings.py` for enabling.
-   * Examples of using `Factories <https://pypi.org/project/factory-boy/>`_ & `pytest <https://pypi.org/project/pytest/>`_ fixtures in account app testing
-   * `shell_plus <https://django-extensions.readthedocs.io/en/latest/shell_plus.html>`_ with `IPython <https://pypi.org/project/ipython/>`_ via `django-extensions <https://pypi.python.org/pypi/django-extensions/>`_ package
-   * `Nox <https://pypi.org/project/nox/>`_ testing sessions for latest Python 3.10, 3.11, 3.12, 3.13
-
-     * `Sphinx <https://pypi.org/project/Sphinx/>`_ documentaion generation
-     * linting
-
-       * `flake8 <https://pypi.org/project/flake8/>`_
-       * `flake8-bandit <https://pypi.org/project/flake8-bandit/>`_
-       * `flake8-bugbear <https://pypi.org/project/flake8-bugbear/>`_
-       * `flake8-import-order <https://pypi.org/project/flake8-import-order/>`_
-     * `safety <https://pypi.org/project/safety/)(python package vulnerability testing>`_
-     * `pytest sessions <https://docs.pytest.org/en/latest/>`_ with `pytest-cov <https://pypi.org/project/pytest-cov/>`_ & `pytest-django <https://pypi.org/project/pytest-django/>`_
- * `run` command menu
-
-(adapted from Nick Janetakis' helpful `docker-django-example <https://github.com/nickjj/docker-django-example/>`_)
-
-You can run `./run` to get a list of commands and each command has documentation in the run file itself. This comes in handy to run various Docker commands because sometimes these commands can be a bit long to type.
-
-*If you get tired of typing `./run` you can always create a shell alias with `alias run=./run` in your `~/.bash_aliases` or equivalent file. Then you'll be
-able to run `run` instead of `./run`.*
-
-Installation
-------------
-
-To install the library project,
-run this command in your terminal:
-
-.. code-block:: console
-
-   $ git clone https://github.com/kevinbowen777/library.git
-   $ cd library
-
-Local installation
-------------------
-
-.. code-block:: console
-
-   $ poetry shell
-   $ poetry install
-   $ python manage.py migrate
-   $ python manage.py createsuperuser
-
-Docker installation
+Project Information
 -------------------
 
-.. code-block:: console
+:doc:`changelog`
+    The project development changelog.
 
-   $ docker compose up --build
-   $ docker compose python manage.py migrate
-   $ docker compose python manage.py createsuperuser
-   Additional commands:
-   $ docker compose exec web python manage.py shell_plus
-     (loads Django shell autoloading project models & classes)
-   $ docker run -it django-start-web bash`
-     (CLI access to container)
+:doc:`contributing`
+    How to contribute to improving the project, reporting bugs, and submitting
+    feature requests.
 
-Pre-commit installation
------------------------
-   To add the hook, run the following command in the poetry shell:
-   $ pre-commit install
+:doc:`license`
+    Terms and conditions for use of this project.
 
-Usage
------
+:doc:`testing`
+    Instructions for running tests against the project.
 
-To run library, locally, enter the following on the command line:
+.. Hidden TOCs
 
-.. code-block:: console
+.. toctree::
+   :caption: Project Documentation
+   :maxdepth: 2
+   :hidden:
 
-   $ python manage.py runserver
+   features
+   installing
+   configuring
+   package_index
 
-For both local, or Docker installations, browse to `<http://127.0.0.1:8000>`_ or `<http://127.0.0.1:8000/resources/>`_
+.. toctree::
+   :caption: Testing
+   :maxdepth: 1
+   :hidden:
 
-Testing
--------
+   testing
+   create_new_users
 
-.. code-block:: console
+.. toctree::
+   :caption: Reference
+   :maxdepth: 1
+   :hidden:
 
-   $ python manage.py runserver
-   $ docker compose exec web python manage.py test
-   $ coverage run -m pytest
-   $ nox --list-sessions
-   $ nox
-   $ nox -s coverage-3.12
-   $ nox -s docs-3.13
-   $ nox -rs lint-3.10  (Use the 'r' flag to reuse existing session)
-   $ nox -s safety  (will run tests against all Python versions)
-   $ nox -s tests
-
-Application Demo
-----------------
-Live demonstration of application running on Heroku:
-
-`kbowen-django-library <https://kbowen-django-library.herokuapp.com/>`_
-
-Reporting Bugs
---------------
-
-Visit the library `Issues page <https://github.com/kevinbowen777/library/issues>`_ on GitHub.
+   changelog
+   contributing
+   license
