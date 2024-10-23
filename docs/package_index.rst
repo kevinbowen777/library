@@ -1,16 +1,11 @@
 Package Index
 =============
 
-.. contents:: Table of Contents
-   :local:
-   :backlinks: top
-   :depth: 1
-
 The following is a list some of the major Python packages being used for
-this `repository <https://github.com/kevinbowen777/django-start/>`__.
+the library_ application.
 For a complete list of packags explicitly added to the project, view the
-``pyproject.toml`` file. For a list of *all* of the package, see the
-``requirements.txt`` file.
+pyproject.toml_ file. For a list of *all* of the package, see the
+requirements.txt_ file.
 
 django-allauth
 --------------
@@ -230,3 +225,8 @@ friendly
 * Repository: https://github.com/friendly-traceback/friendly
 * PyPI package: https://pypi.org/project/friendly/
 * Notes: for local dev shell_plus
+
+
+ .. _library: https://github.com/kevinbowen777/library/
+ .. _pyproject.toml: https://github.com/kevinbowen777/library/blob/master/pyproject.toml
+ .. _requirements.txt: https://github.com/kevinbowen777/library/blob/master/requirements.txt
