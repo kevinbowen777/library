@@ -64,13 +64,14 @@ class BookFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Book
 
-    @factory.post_generation
-    def genre(self, create, extracted, **kwargs):
-        if not create:
-            # Simple build, do nothing.
-            return
+    # Unused: 2025422
+    # @factory.post_generation
+    # def genre(self, create, extracted, **kwargs):
+    #     if not create:
+    #         # Simple build, do nothing.
+    #         return
 
-        if extracted:
-            # A list of genres were passed in, use them
-            for genre in extracted:
-                self.genre.add(genre)
+    #     if extracted:
+    #         # A list of genres were passed in, use them
+    #         for genre in extracted:
+    #             self.genre.add(genre)
