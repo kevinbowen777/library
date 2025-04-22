@@ -154,6 +154,15 @@ nox
 * PyPI package: https://pypi.org/project/nox/
 * Notes:
 
+pip-audit
+---------
+
+* Documentation: https://pypi.org/project/pip-audit/
+* Tutorial:
+* Repository: https://github.com/pypa/pip-audit
+* PyPI package: https://pypi.org/project/pip-audit/
+* Notes:
+
 flake8
 ------
 
@@ -189,15 +198,6 @@ flake8-import-order
 * Repository: https://github.com/PyCQA/flake8-import-order
 * PyPI package: https://pypi.org/project/flake8-import-order/
 * Notes: currently in maintenance mode/not being developed. See: https://github.com/PyCQA/flake8-import-order/issues/163
-
-safety
-------
-
-* Documentation: https://docs.pyup.io/docs/getting-started-with-safety-cli
-* Tutorial:
-* Repository: https://github.com/pyupio/safety
-* PyPI package: https://pypi.org/project/safety/
-* Notes:
 
 ipython
 -------
