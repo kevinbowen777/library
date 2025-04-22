@@ -36,7 +36,7 @@
      - [Debug-toolbar](https://pypi.org/project/django-debug-toolbar/) available. See notes in `config/settings.py` for enabling.
      - Examples of using [Factories](https://pypi.org/project/factory-boy/) & [pytest](https://pypi.org/project/pytest/) fixtures in account app testing
      - [shell_plus](https://django-extensions.readthedocs.io/en/latest/shell_plus.html) with [IPython](https://pypi.org/project/ipython/) via [django-extensions](https://pypi.python.org/pypi/django-extensions/) package
-     - [Nox](https://pypi.org/project/nox/) testing sessions for latest Python 3.10, 3.11, 3.12, 3.13
+     - [Nox](https://pypi.org/project/nox/) testing sessions for latest Python 3.11, 3.12, 3.13
          - [Coverage](https://pypi.org/project/coverage/) report generation (`nox -s coverage`)
          - [Sphinx](https://pypi.org/project/Sphinx/) documentaion generation (`nox -s lint`)
          - linting (`nox -s lint`)
@@ -95,12 +95,12 @@ able to run `run` instead of `./run`.*
  - `docker compose exec web python manage.py test`
  - `coverage run -m pytest`
  - Nox (includes sessions for coverage, lint, pyright(typing), audit, tests)
-     - testing supported for Python 3.10, 3.11, 3.12, 3.13
+     - testing supported for Python 3.11, 3.12, 3.13
      - e.g. `nox`, `nox -rs lint-3.13`, `nox -s tests`
        - `nox`
        - `nox -s coverage-3.12`
        - `nox -s docs-3.13`
-       - `nox -rs lint-3.10` (Use the 'r' flag to reuse existing session)
+       - `nox -rs lint-3.11` (Use the 'r' flag to reuse existing session)
        - `nox -s pyright-3.13`
        - `nox -s audit` (will run tests against all Python versions)
        - `nox -s tests`
