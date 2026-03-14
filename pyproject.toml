@@ -4,7 +4,7 @@ version = "0.3.3"
 description = "A lending library built using the Django web framework"
 requires-python = ">=3.11.0"
 dependencies = [
-    "Django (==5.2.11)",
+    "Django (==5.2.12)",
     "django-allauth (>=65.0, <66.0.0)",
     "environs[django] (>=11.0, <15.0)",
     "django-extensions (>=4.1.0, <4.2.0)",
@@ -14,7 +14,7 @@ dependencies = [
     "gunicorn (>=25.1.0, <26.0.0)",
     # crispy-bootstrap4 uses calver, so version is unclamped
     "crispy-bootstrap4 (>=2024.10)",
-    "django-crispy-forms (>=2.5, <2.6)",
+    "django-crispy-forms (>=2.6, <2.7)",
     "django-countries (>=8.2, <8.3)",
 ]
 authors = [
