@@ -9,7 +9,7 @@
 
 </div>
 
-- A lending library built using the Django 5.2.x web framework
+- A lending library built using the Django 6.x web framework
 
 ### Table of Contents
 
