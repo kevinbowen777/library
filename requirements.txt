@@ -1,6 +1,6 @@
-asgiref==3.11.1 ; python_version >= "3.12" and python_full_version < "3.15.0" \
-    --hash=sha256:5f184dc43b7e763efe848065441eac62229c9f7b0475f41f80e207a114eda4ce \
-    --hash=sha256:e8667a091e69529631969fd45dc268fa79b99c92c5fcdda727757e52146ec133
+asgiref==3.12.1 ; python_version >= "3.12" and python_full_version < "3.15.0" \
+    --hash=sha256:59dcb51c272ad209d59bed5708a64a333083e86017d7fcdd67498eeab7784340 \
+    --hash=sha256:fe386d1c2bff7259ea95929266d12a8cf9a8b5a1c2598402967d8792e7a7c094
 crispy-bootstrap4==2026.2 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:4b2b99dfe3e3cacb548702159462110901bd38792b650b770e50c62284ac2227 \
     --hash=sha256:66f8f14bf9c2c16ed94243236ed253a94e5a625afa1ee64022ce29db98c6cd85
@@ -10,9 +10,9 @@ dj-database-url==3.1.2 ; python_version >= "3.12" and python_full_version < "3.1
 dj-email-url==1.0.6 ; python_full_version >= "3.12.0" and python_full_version < "3.15.0" \
     --hash=sha256:55ffe3329e48f54f8a75aa36ece08f365e09d61f8a209773ef09a1d4760e699a \
     --hash=sha256:cbd08327fbb08b104eac160fb4703f375532e4c0243eb230f5b960daee7a96db
-django==5.2.15 ; python_version >= "3.12" and python_full_version < "3.15.0" \
-    --hash=sha256:0eb4a9bb1853a35b0286dbc6d916bd352c8c2687195a7f2d6f80cefd840e4970 \
-    --hash=sha256:5154a9bf84ac01dde011e367f355c07dbb329532e06810dcf3ef2af269e236e7
+django==6.0.7 ; python_version >= "3.12" and python_full_version < "3.15.0" \
+    --hash=sha256:2998503fc083124fb58037084bfa00de323c7c743f05f1b4284e77bff0ab8890 \
+    --hash=sha256:a037427c2288443a8c02a1b02295a31c239663aa682bc50b1976afb7cf6a769e
 django-allauth==65.18.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:afb82e2c545b9a5539370ad120468faaed84715e095a7b6e76972dacdc6376fe \
     --hash=sha256:e508640c83b94eaf1a9b4e9ac5332dc310dcdc83fca40d58a3f670e15bad1e84
@@ -22,9 +22,9 @@ django-cache-url==3.4.6 ; python_full_version >= "3.12.0" and python_full_versio
 django-countries==9.0.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:21fce461733c856355c487d1f24b71338599482505004a0c2e521fd574a59fb1 \
     --hash=sha256:a993416af08a8a4e6e866d56b71c7ce92351c81a2543da213cd7899917567a42
-django-crispy-forms==2.6 ; python_version >= "3.12" and python_full_version < "3.15.0" \
-    --hash=sha256:4921a1087c6cd4f9fa3c139654c1de1c1c385f8bd6729aaee530bc0121ab4b93 \
-    --hash=sha256:8ee0ae28b6b0ac41ff48a65944480c049fe8d1b0047086874fd7efabf4ec1374
+django-crispy-forms==2.7 ; python_version >= "3.12" and python_full_version < "3.15.0" \
+    --hash=sha256:42a7ecb05ac3fd050d006dfe7aeceb7f318c30e5b5124ff619e2be252f36f096 \
+    --hash=sha256:4c59bed60417375cba26cebb2c67ab350b655934670270b1c89dbcd7e60f1b4c
 django-extensions==4.1 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:0699a7af28f2523bf8db309a80278519362cd4b6e1fd0a8cd4bf063e1e023336 \
     --hash=sha256:7b70a4d28e9b840f44694e3f7feb54f55d495f8b3fa6c5c0e5e12bcb2aa3cdeb
@@ -196,9 +196,9 @@ sqlparse==0.5.5 ; python_version >= "3.12" and python_full_version < "3.15.0" \
 typing-extensions==4.16.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \
     --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5
-tzdata==2026.2 ; python_version >= "3.12" and python_full_version < "3.15.0" and sys_platform == "win32" \
-    --hash=sha256:9173fde7d80d9018e02a662e168e5a2d04f87c41ea174b139fbef642eda62d10 \
-    --hash=sha256:bbe9af844f658da81a5f95019480da3a89415801f6cc966806612cc7169bffe7
+tzdata==2026.3 ; python_version >= "3.12" and python_full_version < "3.15.0" and sys_platform == "win32" \
+    --hash=sha256:4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415 \
+    --hash=sha256:dc096730c87af6cab1b171c9d532be840741ff5d459015e7f6947bd7d7e54931
 whitenoise==6.12.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:f723ebb76a112e98816ff80fcea0a6c9b8ecde835f8ddda25df7a30a3c2db6ad \
     --hash=sha256:fc5e8c572e33ebf24795b47b6a7da8da3c00cff2349f5b04c02f28d0cc5a3cc2
