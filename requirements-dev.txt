@@ -1279,6 +1279,9 @@ tomli==2.4.1 ; python_version >= "3.12" and python_full_version < "3.15.0" \
 tomli-w==1.2.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:188306098d013b691fcadc011abd66727d3c414c571bb01b1a174ba8c983cf90 \
     --hash=sha256:2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021
+towncrier==25.8.0 ; python_version >= "3.12" and python_full_version < "3.15.0" \
+    --hash=sha256:b953d133d98f9aeae9084b56a3563fd2519dfc6ec33f61c9cd2c61ff243fb513 \
+    --hash=sha256:eef16d29f831ad57abb3ae32a0565739866219f1ebfbdd297d32894eb9940eb1
 types-psycopg2==2.9.21.20260724 ; python_version >= "3.12" and python_full_version < "3.15.0" \
     --hash=sha256:4f87890dd06cea99e3bb0536330ffc2a7320e69059dc1ee0e2c884ef2718f2b4 \
     --hash=sha256:db31031c37de823a2b21c787cb84832174fdda2a99a8b1af648206f19cc32f8c
