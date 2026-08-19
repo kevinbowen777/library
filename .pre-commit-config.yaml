@@ -28,7 +28,7 @@ repos:
         files: (^|/)a/.+\.(py|html|sh|css|js)$
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.16.2
+    rev: v0.16.3
     hooks:
       # Run the linter
       - id: ruff
@@ -64,7 +64,7 @@ repos:
       #   args: ["--with", "dev", "-o", "requirements-dev.txt"]
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.31.1
+    rev: 1.32.0
     hooks:
       - id: django-upgrade
         args: [--target-version, "6.0"]

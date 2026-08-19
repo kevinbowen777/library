@@ -1,0 +1,1 @@
+Update django-debug-toolbar to 7.1.1
