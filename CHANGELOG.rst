@@ -27,6 +27,24 @@ with advance notice in the **Deprecations** section of releases.
 
 .. towncrier release notes start
 
+library 0.3.6 (2026-09-06)
+==========================
+
+Contributor-facing changes
+--------------------------
+
+-  (`#609 <https://github.com/kevinbowen777/library/609>`_): Initial zizmor remediation. Pin GitHub actions to hashes.
+
+-  (`#612 <https://github.com/kevinbowen777/library/612>`_): Update django-debug-toolbar to 7.1.1
+
+-  (`#612 <https://github.com/kevinbowen777/library/612>`_): Update gunicorn to 26.1.0
+
+-  (`#612 <https://github.com/kevinbowen777/library/612>`_): Update sqlparse to 0.6.0
+
+-  (`#612 <https://github.com/kevinbowen777/library/612>`_): Update django-allauth to 65.19.1
+
+-  (`#612 <https://github.com/kevinbowen777/library/612>`_): Update nox to 2026.8.17
+
 library 0.3.5 (2026-08-17)
 ==========================
 
