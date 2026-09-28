@@ -3,6 +3,7 @@ import datetime
 import factory
 import factory.fuzzy
 import pytest
+from factory.declarations import RelatedFactory, SubFactory
 
 from ..models import Author, Book, Genre
 
@@ -37,6 +38,7 @@ class AuthorFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Author
+        skip_postgeneration_save = True
 
 
 class GenreFactory(factory.django.DjangoModelFactory):
@@ -44,12 +46,13 @@ class GenreFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Genre
+        skip_postgeneration_save = True
 
 
 class BookFactory(factory.django.DjangoModelFactory):
     title = factory.fuzzy.FuzzyText(length=12, prefix="The Book of ")
-    author = factory.SubFactory(AuthorFactory)
-    genre = factory.RelatedFactory(
+    author = SubFactory(AuthorFactory)
+    genre = RelatedFactory(
         GenreFactory,
         # factory_related_name='genre',
     )
@@ -63,6 +66,7 @@ class BookFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Book
+        skip_postgeneration_save = True
 
     # Unused: 2025422
     # @factory.post_generation
