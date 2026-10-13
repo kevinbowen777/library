@@ -1,11 +1,11 @@
 [project]
 name = "library"
-version = "0.3.7"
+version = "0.3.8"
 description = "A lending library built using the Django web framework"
 requires-python = ">=3.12.0"
 dependencies = [
-    "Django (==6.1.1)",
-    "django-allauth (==65.19.4)",
+    "Django (==6.1.2)",
+    "django-allauth (==65.19.7)",
     "environs[django] (==15.2.0)",
     "django-extensions (==4.1.0)",
     "whitenoise (==6.12.0)",
@@ -294,6 +294,12 @@ name = "Bug fixes"
 showcontent = true
 
 [[tool.towncrier.type]]
+# Stuff that affects security. e.g. updating packages,
+directory = "security"
+name = "Security updated"
+showcontent = true
+
+[[tool.towncrier.type]]
 # Notable updates to the documentation structure or build process.
 directory = "doc"
 name = "Improved documentation"
@@ -304,12 +310,6 @@ showcontent = true
 # building the docs, setting up the development environment.
 directory = "contrib"
 name = "Contributor-facing changes"
-showcontent = true
-
-[[tool.towncrier.type]]
-# Stuff that affects security. e.g. updating packages,
-directory = "security"
-name = "Security updated"
 showcontent = true
 
 [[tool.towncrier.type]]
