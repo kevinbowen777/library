@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Contributing" href="contributing.html"><link rel="prev" title="Testing" href="testing/index.html">
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Contributing" href="contributing.html"><link rel="prev" title="Create new users" href="testing/create_new_users.html">
         <link rel="prefetch" href="_static/django_24.png" as="image">
 
     <link rel="shortcut icon" href="_static/django_24.png"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
@@ -209,6 +209,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="features/index.html">Features</a><input aria-label="Toggle navigation of Features" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="features/application_features.html">Application features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features/dev_test_features.html">Dev &amp; Testing Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features/run_command_features.html">The run command script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features/django_debug_toolbar.html">django-debug-toolbar configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="features/package_index.html">Package Index</a></li>
 </ul>
@@ -218,6 +219,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="testing/index.html">Testing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing/index.html#running-the-tests">Running the Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing/create_new_users.html">Create new users</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current">
@@ -272,6 +274,24 @@
 the changelog. DO NOT commit any changes to this file.</p>
 <p>Backward incompatible (breaking) changes should only be introduced in major versions
 with advance notice in the <strong>Deprecations</strong> section of releases.</p>
+<section id="library-0-3-8-2026-10-13">
+<h2>library 0.3.8 (2026-10-13)<a class="headerlink" href="#library-0-3-8-2026-10-13" title="Link to this heading">¶</a></h2>
+<section id="security-updated">
+<h3>Security updated<a class="headerlink" href="#security-updated" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/626">#626</a>): Update django-allauth to 65.19.7</p></li>
+<li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/627">#627</a>): Update Django to 6.1.2</p></li>
+</ul>
+</section>
+<section id="contributor-facing-changes">
+<h3>Contributor-facing changes<a class="headerlink" href="#contributor-facing-changes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/626">#626</a>): Update testing for Python 3.14.8, 3.13.16, 3.12.15</p></li>
+<li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/626">#626</a>): Update djlint to 1.46.4</p></li>
+<li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/626">#626</a>): Update werkzeug to 3.1.9</p></li>
+</ul>
+</section>
+</section>
 <section id="library-0-3-7-2026-09-27">
 <h2>library 0.3.7 (2026-09-27)<a class="headerlink" href="#library-0-3-7-2026-09-27" title="Link to this heading">¶</a></h2>
 <section id="improved-documentation">
@@ -282,8 +302,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/570">#570</a>): Restructure documentation</p></li>
 </ul>
 </section>
-<section id="contributor-facing-changes">
-<h3>Contributor-facing changes<a class="headerlink" href="#contributor-facing-changes" title="Link to this heading">¶</a></h3>
+<section id="id10">
+<h3>Contributor-facing changes<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/570">#570</a>): Add myst-parser dependency</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/570">#570</a>): Update djlint to 1.46.2</p></li>
@@ -300,8 +320,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-6-2026-09-06">
 <h2>library 0.3.6 (2026-09-06)<a class="headerlink" href="#library-0-3-6-2026-09-06" title="Link to this heading">¶</a></h2>
-<section id="id15">
-<h3>Contributor-facing changes<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<section id="id21">
+<h3>Contributor-facing changes<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/609">#609</a>): Initial zizmor remediation. Pin GitHub actions to hashes.</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/612">#612</a>): Update django-debug-toolbar to 7.1.1</p></li>
@@ -314,8 +334,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-5-2026-08-17">
 <h2>library 0.3.5 (2026-08-17)<a class="headerlink" href="#library-0-3-5-2026-08-17" title="Link to this heading">¶</a></h2>
-<section id="id22">
-<h3>Improved documentation<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<section id="id28">
+<h3>Improved documentation<a class="headerlink" href="#id28" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/587">#587</a>): Add towncrier 25.8.0.</p></li>
 </ul>
@@ -329,8 +349,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-4-2026-07-29">
 <h2>library 0.3.4 (2026-07-29)<a class="headerlink" href="#library-0-3-4-2026-07-29" title="Link to this heading">¶</a></h2>
-<section id="id25">
-<h3>Contributor-facing changes<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<section id="id31">
+<h3>Contributor-facing changes<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Add Python 3.14 support.</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/605">#605</a>): Update with Python 3.14.6 &amp; 3.13.14.</p></li>
@@ -343,8 +363,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/601">#601</a>): Drop support for Python 3.11.</p></li>
 </ul>
 </section>
-<section id="id29">
-<h3>New features<a class="headerlink" href="#id29" title="Link to this heading">¶</a></h3>
+<section id="id35">
+<h3>New features<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/569">#569</a>): Upgrade Django to 6.0.7.</p></li>
 </ul>
@@ -352,32 +372,32 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-3-2025-05-04">
 <h2>library 0.3.3 (2025-05-04)<a class="headerlink" href="#library-0-3-3-2025-05-04" title="Link to this heading">¶</a></h2>
-<section id="id31">
-<h3>Contributor-facing changes<a class="headerlink" href="#id31" title="Link to this heading">¶</a></h3>
+<section id="id37">
+<h3>Contributor-facing changes<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/515">#515</a>): Update Poetry to 2.1.2.</p></li>
 </ul>
 </section>
-<section id="id33">
-<h3>Deprecations (removal in next major release)<a class="headerlink" href="#id33" title="Link to this heading">¶</a></h3>
+<section id="id39">
+<h3>Deprecations (removal in next major release)<a class="headerlink" href="#id39" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/511">#511</a>): Drop Python 3.10 support.</p></li>
 </ul>
 </section>
-<section id="id35">
-<h3>Improved documentation<a class="headerlink" href="#id35" title="Link to this heading">¶</a></h3>
+<section id="id41">
+<h3>Improved documentation<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/515">#515</a>): Update Sphinx to 8.2.3.</p></li>
 </ul>
 </section>
-<section id="id37">
-<h3>New features<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+<section id="id43">
+<h3>New features<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/516">#516</a>): Upgrade Django to 5.2.</p></li>
 </ul>
 </section>
-<section id="security-updated">
-<h3>Security updated<a class="headerlink" href="#security-updated" title="Link to this heading">¶</a></h3>
+<section id="id45">
+<h3>Security updated<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/519">#519</a>): Replace safety package with pip-audit.</p></li>
 </ul>
@@ -385,15 +405,15 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-2-2025-01-17">
 <h2>library 0.3.2 (2025-01-17)<a class="headerlink" href="#library-0-3-2-2025-01-17" title="Link to this heading">¶</a></h2>
-<section id="id40">
-<h3>Contributor-facing changes<a class="headerlink" href="#id40" title="Link to this heading">¶</a></h3>
+<section id="id47">
+<h3>Contributor-facing changes<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/453">#453</a>): Add support for Python 3.13</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/495">#495</a>): Re-build pyproject for Poetry 2.0.</p></li>
 </ul>
 </section>
-<section id="id43">
-<h3>New features<a class="headerlink" href="#id43" title="Link to this heading">¶</a></h3>
+<section id="id50">
+<h3>New features<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/487">#487</a>): Upgrade Django to 5.1.4</p></li>
 </ul>
@@ -401,28 +421,28 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-3-0-2023-12-30">
 <h2>library 0.3.0 (2023-12-30)<a class="headerlink" href="#library-0-3-0-2023-12-30" title="Link to this heading">¶</a></h2>
-<section id="id45">
-<h3>Contributor-facing changes<a class="headerlink" href="#id45" title="Link to this heading">¶</a></h3>
+<section id="id52">
+<h3>Contributor-facing changes<a class="headerlink" href="#id52" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Upgrade Poetry to 1.7.1.</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/196">#196</a>): Migrate to non-root Docker user &amp; venv.</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/364">#364</a>): Update Python to 3.12.1.</p></li>
 </ul>
 </section>
-<section id="id48">
-<h3>Deprecations (removal in next major release)<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h3>
+<section id="id55">
+<h3>Deprecations (removal in next major release)<a class="headerlink" href="#id55" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/362">#362</a>): Drop support for Python 3.9.</p></li>
 </ul>
 </section>
-<section id="id50">
-<h3>Improved documentation<a class="headerlink" href="#id50" title="Link to this heading">¶</a></h3>
+<section id="id57">
+<h3>Improved documentation<a class="headerlink" href="#id57" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Update Sphinx theme to Furo</p></li>
 </ul>
 </section>
-<section id="id51">
-<h3>New features<a class="headerlink" href="#id51" title="Link to this heading">¶</a></h3>
+<section id="id58">
+<h3>New features<a class="headerlink" href="#id58" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/360">#360</a>): Upgrade to Django 5.0.</p></li>
 </ul>
@@ -430,8 +450,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-2-0-2023-05-21">
 <h2>library 0.2.0 (2023-05-21)<a class="headerlink" href="#library-0-2-0-2023-05-21" title="Link to this heading">¶</a></h2>
-<section id="id53">
-<h3>Contributor-facing changes<a class="headerlink" href="#id53" title="Link to this heading">¶</a></h3>
+<section id="id60">
+<h3>Contributor-facing changes<a class="headerlink" href="#id60" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/236">#236</a>): Install ruff. Drop flake8-* packages.</p></li>
 </ul>
@@ -439,8 +459,8 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-1-0-2023-05-08">
 <h2>library 0.1.0 (2023-05-08)<a class="headerlink" href="#library-0-1-0-2023-05-08" title="Link to this heading">¶</a></h2>
-<section id="id55">
-<h3>Contributor-facing changes<a class="headerlink" href="#id55" title="Link to this heading">¶</a></h3>
+<section id="id62">
+<h3>Contributor-facing changes<a class="headerlink" href="#id62" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Implement nox for testing</p></li>
 <li><p>: Mirror to GitLab.</p></li>
@@ -448,14 +468,14 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/231">#231</a>): Migrate from SQLite to PostgreSQL</p></li>
 </ul>
 </section>
-<section id="id58">
-<h3>Improved documentation<a class="headerlink" href="#id58" title="Link to this heading">¶</a></h3>
+<section id="id65">
+<h3>Improved documentation<a class="headerlink" href="#id65" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Add Sphinx for documentation</p></li>
 </ul>
 </section>
-<section id="id59">
-<h3>New features<a class="headerlink" href="#id59" title="Link to this heading">¶</a></h3>
+<section id="id66">
+<h3>New features<a class="headerlink" href="#id66" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/233">#233</a>): Upgrade to Django 4.2.</p></li>
 </ul>
@@ -463,14 +483,14 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
 </section>
 <section id="library-0-0-1-2022-05-05">
 <h2>library 0.0.1 (2022-05-05)<a class="headerlink" href="#library-0-0-1-2022-05-05" title="Link to this heading">¶</a></h2>
-<section id="id61">
-<h3>Contributor-facing changes<a class="headerlink" href="#id61" title="Link to this heading">¶</a></h3>
+<section id="id68">
+<h3>Contributor-facing changes<a class="headerlink" href="#id68" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Add support for Python 3.10</p></li>
 </ul>
 </section>
-<section id="id62">
-<h3>New features<a class="headerlink" href="#id62" title="Link to this heading">¶</a></h3>
+<section id="id69">
+<h3>New features<a class="headerlink" href="#id69" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>: Support Django 4.0.4</p></li>
 <li><p>(<a class="reference external" href="https://github.com/kevinbowen777/library/9">#9</a>): Build Docker support for Heroku deployment.</p></li>
@@ -499,14 +519,14 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="testing/index.html">
+          <a class="prev-page" href="testing/create_new_users.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Testing</div>
+                <div class="title">Create new users</div>
                 
               </div>
             </a>
@@ -520,7 +540,7 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Sep 27, 2026</div>
+              Last updated on Oct 12, 2026</div>
           </div>
           <div class="right-details">
             
@@ -542,59 +562,64 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
-<li><a class="reference internal" href="#library-0-3-7-2026-09-27">library 0.3.7 (2026-09-27)</a><ul>
-<li><a class="reference internal" href="#improved-documentation">Improved documentation</a></li>
+<li><a class="reference internal" href="#library-0-3-8-2026-10-13">library 0.3.8 (2026-10-13)</a><ul>
+<li><a class="reference internal" href="#security-updated">Security updated</a></li>
 <li><a class="reference internal" href="#contributor-facing-changes">Contributor-facing changes</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#library-0-3-7-2026-09-27">library 0.3.7 (2026-09-27)</a><ul>
+<li><a class="reference internal" href="#improved-documentation">Improved documentation</a></li>
+<li><a class="reference internal" href="#id10">Contributor-facing changes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#library-0-3-6-2026-09-06">library 0.3.6 (2026-09-06)</a><ul>
-<li><a class="reference internal" href="#id15">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id21">Contributor-facing changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-3-5-2026-08-17">library 0.3.5 (2026-08-17)</a><ul>
-<li><a class="reference internal" href="#id22">Improved documentation</a></li>
+<li><a class="reference internal" href="#id28">Improved documentation</a></li>
 <li><a class="reference internal" href="#new-features">New features</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-3-4-2026-07-29">library 0.3.4 (2026-07-29)</a><ul>
-<li><a class="reference internal" href="#id25">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id31">Contributor-facing changes</a></li>
 <li><a class="reference internal" href="#deprecations-removal-in-next-major-release">Deprecations (removal in next major release)</a></li>
-<li><a class="reference internal" href="#id29">New features</a></li>
+<li><a class="reference internal" href="#id35">New features</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-3-3-2025-05-04">library 0.3.3 (2025-05-04)</a><ul>
-<li><a class="reference internal" href="#id31">Contributor-facing changes</a></li>
-<li><a class="reference internal" href="#id33">Deprecations (removal in next major release)</a></li>
-<li><a class="reference internal" href="#id35">Improved documentation</a></li>
-<li><a class="reference internal" href="#id37">New features</a></li>
-<li><a class="reference internal" href="#security-updated">Security updated</a></li>
+<li><a class="reference internal" href="#id37">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id39">Deprecations (removal in next major release)</a></li>
+<li><a class="reference internal" href="#id41">Improved documentation</a></li>
+<li><a class="reference internal" href="#id43">New features</a></li>
+<li><a class="reference internal" href="#id45">Security updated</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-3-2-2025-01-17">library 0.3.2 (2025-01-17)</a><ul>
-<li><a class="reference internal" href="#id40">Contributor-facing changes</a></li>
-<li><a class="reference internal" href="#id43">New features</a></li>
+<li><a class="reference internal" href="#id47">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id50">New features</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-3-0-2023-12-30">library 0.3.0 (2023-12-30)</a><ul>
-<li><a class="reference internal" href="#id45">Contributor-facing changes</a></li>
-<li><a class="reference internal" href="#id48">Deprecations (removal in next major release)</a></li>
-<li><a class="reference internal" href="#id50">Improved documentation</a></li>
-<li><a class="reference internal" href="#id51">New features</a></li>
+<li><a class="reference internal" href="#id52">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id55">Deprecations (removal in next major release)</a></li>
+<li><a class="reference internal" href="#id57">Improved documentation</a></li>
+<li><a class="reference internal" href="#id58">New features</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-2-0-2023-05-21">library 0.2.0 (2023-05-21)</a><ul>
-<li><a class="reference internal" href="#id53">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id60">Contributor-facing changes</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-1-0-2023-05-08">library 0.1.0 (2023-05-08)</a><ul>
-<li><a class="reference internal" href="#id55">Contributor-facing changes</a></li>
-<li><a class="reference internal" href="#id58">Improved documentation</a></li>
-<li><a class="reference internal" href="#id59">New features</a></li>
+<li><a class="reference internal" href="#id62">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id65">Improved documentation</a></li>
+<li><a class="reference internal" href="#id66">New features</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#library-0-0-1-2022-05-05">library 0.0.1 (2022-05-05)</a><ul>
-<li><a class="reference internal" href="#id61">Contributor-facing changes</a></li>
-<li><a class="reference internal" href="#id62">New features</a></li>
+<li><a class="reference internal" href="#id68">Contributor-facing changes</a></li>
+<li><a class="reference internal" href="#id69">New features</a></li>
 <li><a class="reference internal" href="#miscellaneous-internal-changes">Miscellaneous internal changes</a></li>
 </ul>
 </li>
@@ -609,7 +634,7 @@ with advance notice in the <strong>Deprecations</strong> section of releases.</p
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=29d04658"></script>
+</div><script src="_static/documentation_options.js?v=c1cae59a"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>

@@ -18,6 +18,7 @@
 - [Testing](#testing)
 - [Application Demo](#application-demo)
 - [Screenshots](#screenshots)
+- [Contributions](#contributions)
 - [Reporting Bugs](#reporting-bugs)
 
 ---
@@ -134,6 +135,13 @@ Author list
 
 Book list
 ![Book List](images/library_booklist_staff.png)
+
+---
+
+### Contributions
+
+You are free to fork this repository and modify as you see fit. See
+[CONTRIBUTING](https://github.com/kevinbowen777/library/CONTRIBUTING.md) for details on reporting issues, etc.
 
 ---
 
