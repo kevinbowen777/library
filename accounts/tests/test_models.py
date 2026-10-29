@@ -19,7 +19,6 @@ class CustomUserTests(TestCase):
         )
 
     def test___str__(self):
-        assert self.user.__str__() == self.user.username
         assert str(self.user) == self.user.username
 
     def test_user_get_absolute_url(self):
@@ -82,9 +81,8 @@ class SignupPageTests(TestCase):
         self.assertNotContains(self.response, "I do not belong here")
 
     def test_signup_form(self):
-        new_user = get_user_model().objects.create_user(  # noqa: F841
-            self.username, self.email
-        )
+        # new_user = get_user_model().objects.create_user(
+        get_user_model().objects.create_user(self.username, self.email)
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, self.username)
         self.assertEqual(get_user_model().objects.all()[0].email, self.email)

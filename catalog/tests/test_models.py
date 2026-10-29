@@ -11,7 +11,6 @@ class BookModelTest(TestCase):
         self.book = BookFactory()
 
     def test_book___str__(self):
-        assert self.book.__str__() == self.book.title
         assert str(self.book) == self.book.title
 
     def test_get_absolute_url(self):
@@ -24,7 +23,6 @@ class GenreModelTest(TestCase):
         self.genre = Genre.objects.create(name="Fiction")
 
     def test_genre___str__(self):
-        assert self.genre.__str__() == self.genre.name
         assert str(self.genre) == self.genre.name
 
 
@@ -33,7 +31,6 @@ class LanguageModelTest(TestCase):
         self.language = Language.objects.create(name="English")
 
     def test_genre___str__(self):
-        assert self.language.__str__() == self.language.name
         assert str(self.language) == self.language.name
 
 
@@ -95,11 +92,11 @@ class AuthorModelTest(TestCase):
     def test_middlename__str__(self):
         if self.author.middle_name is not None:
             self.assertEqual(
-                self.author.__str__(),
+                str(self.author),
                 f"{self.author.last_name}, {self.author.first_name} {self.author.middle_name}",
             )
         else:
             self.assertEqual(
-                self.author.__str__(),
+                str(self.author),
                 f"{self.author.last_name}, {self.author.first_name}",
             )

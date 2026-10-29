@@ -1,4 +1,5 @@
 import datetime
+from typing import ClassVar
 
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import (
@@ -72,7 +73,8 @@ class LoanedBooksByUserListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return (
-            BookInstance.objects.filter(borrower=self.request.user)
+            BookInstance.objects
+            .filter(borrower=self.request.user)
             .filter(status__exact="o")
             .order_by("due_back")
         )
@@ -125,15 +127,20 @@ def renew_book_librarian(request, pk):
 
 class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
-    fields = ["first_name", "last_name", "date_of_birth", "date_of_death"]
-    initial = {"date_of_birth": "02/02/1882"}
+    fields: ClassVar[list[str]] = [
+        "first_name",
+        "last_name",
+        "date_of_birth",
+        "date_of_death",
+    ]
+    initial: ClassVar[dict[str]] = {"date_of_birth": "02/02/1882"}
     permission_required = "catalog.can_mark_returned"
     template_name = "catalog/author_create.html"
 
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     model = Author
-    fields = [
+    fields: ClassVar[list[str]] = [
         "first_name",
         "last_name",
         "middle_name",
@@ -152,7 +159,7 @@ class AuthorDelete(PermissionRequiredMixin, DeleteView):
 
 class BookCreate(PermissionRequiredMixin, CreateView):
     model = Book
-    fields = [
+    fields: ClassVar[list[str]] = [
         "title",
         "author",
         "pages",
@@ -169,7 +176,7 @@ class BookCreate(PermissionRequiredMixin, CreateView):
 
 class BookUpdate(PermissionRequiredMixin, UpdateView):
     model = Book
-    fields = [
+    fields: ClassVar[list[str]] = [
         "title",
         "author",
         "pages",

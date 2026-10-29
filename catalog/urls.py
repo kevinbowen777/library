@@ -9,7 +9,6 @@ urlpatterns = [
     path("book/create/", views.BookCreate.as_view(), name="book-create"),
     path("book/<int:pk>/update/", views.BookUpdate.as_view(), name="book-update"),
     path("book/<int:pk>/delete/", views.BookDelete.as_view(), name="book-delete"),
-    #
     path("authors/", views.AuthorListView.as_view(), name="authors"),
     path(
         "author/<int:pk>",
@@ -27,7 +26,6 @@ urlpatterns = [
         views.AuthorDelete.as_view(),
         name="author-delete",
     ),
-    #
     path(
         "mybooks/",
         views.LoanedBooksByUserListView.as_view(),
@@ -43,6 +41,5 @@ urlpatterns = [
         views.renew_book_librarian,
         name="renew-book-librarian",
     ),
-    #
     path("search/", views.SearchResultsListView.as_view(), name="search-results"),
 ]

@@ -4,7 +4,7 @@
 project = "library"
 author = "Kevin Bowen"
 copyright = f"%Y, {author}"
-release = "0.3.8"
+release = "0.3.9"
 
 # -- General configuration --------------------------------------------
 extensions = [

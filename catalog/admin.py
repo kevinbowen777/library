@@ -1,3 +1,5 @@
+from typing import ClassVar
+
 from django.contrib import admin
 
 from .models import Author, Book, BookInstance, Genre, Language
@@ -38,13 +40,13 @@ class AuthorAdmin(admin.ModelAdmin):
         "date_of_birth",
         "date_of_death",
     )
-    fields = [
+    fields: ClassVar[list[str]] = [
         "first_name",
         "middle_name",
         "last_name",
         ("date_of_birth", "date_of_death"),
     ]
-    inlines = [BooksInline]
+    inlines: ClassVar[list] = [BooksInline]
 
 
 class BooksInstanceInline(admin.TabularInline):
@@ -63,7 +65,7 @@ class BookAdmin(admin.ModelAdmin):
     """
 
     list_display = ("title", "author", "display_genre")
-    inlines = [BooksInstanceInline]
+    inlines: ClassVar[list[str]] = [BooksInstanceInline]
 
 
 @admin.register(BookInstance)
