@@ -21,8 +21,8 @@ class AuthorListViewTest(TestCase):
         number_of_authors = 13
         for author_id in range(number_of_authors):
             Author.objects.create(
-                first_name="Django {0}".format(author_id),
-                last_name="Wilkins {0}".format(author_id),
+                first_name=f"Django {author_id}",
+                last_name=f"Wilkins {author_id}",
             )
 
     def test_view_url_exists_at_desired_location(self):
@@ -66,7 +66,8 @@ class LoanedBookInstancesByUserListViewTest(TestCase):
 
         # Create a book
         test_author = Author.objects.create(first_name="John", last_name="Smith")
-        test_genre = Genre.objects.create(name="Fantasy")  # noqa:F841
+        # test_genre = Genre.objects.create(name="Fantasy")
+        Genre.objects.create(name="Fantasy")
         test_language = Language.objects.create(name="English")
         test_book = Book.objects.create(
             title="Book Title",

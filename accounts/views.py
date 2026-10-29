@@ -1,5 +1,7 @@
 """Views for library user accounts."""
 
+from typing import ClassVar
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
@@ -24,7 +26,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 
 
 class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    fields = [
+    fields: ClassVar[list[str]] = [
         "name",
         "age",
         "bio",

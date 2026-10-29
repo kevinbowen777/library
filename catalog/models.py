@@ -1,5 +1,6 @@
 import uuid
 from datetime import date
+from typing import ClassVar
 
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -10,7 +11,7 @@ class Genre(models.Model):
     name = models.CharField(max_length=200, help_text="Enter a book genre")
 
     class Meta:
-        ordering = ["name"]
+        ordering: ClassVar[list[str]] = ["name"]
 
     def __str__(self):
         return self.name
@@ -20,7 +21,7 @@ class Language(models.Model):
     name = models.CharField(max_length=200, help_text="Enter the book's language")
 
     class Meta:
-        ordering = ["name"]
+        ordering: ClassVar[list[str]] = ["name"]
 
     def __str__(self):
         return self.name
@@ -46,7 +47,7 @@ class Book(models.Model):
     cover = models.ImageField(upload_to="covers/", blank=True)
 
     class Meta:
-        ordering = ["title", "author"]
+        ordering: ClassVar[list[str]] = ["title", "author"]
 
     def __str__(self):
         return self.title
@@ -92,17 +93,15 @@ class BookInstance(models.Model):
     )
 
     class Meta:
-        ordering = ["due_back"]
+        ordering: ClassVar[list[str]] = ["due_back"]
         permissions = (("can_mark_returned", "Set book as returned"),)
 
     def __str__(self):
-        return "{0} ({1})".format(self.id, self.book.title)
+        return f"{self.id} ({self.book.title})"
 
     @property
     def is_overdue(self):
-        if self.due_back and date.today() > self.due_back:
-            return True
-        return False
+        return bool(self.due_back and date.today() > self.due_back)
 
 
 class Author(models.Model):
@@ -115,7 +114,7 @@ class Author(models.Model):
     date_of_death = models.DateField("Died", null=True, blank=True)
 
     class Meta:
-        ordering = ["last_name", "first_name"]
+        ordering: ClassVar[list[str]] = ["last_name", "first_name"]
 
     def __str__(self):
         if self.middle_name is not None:
